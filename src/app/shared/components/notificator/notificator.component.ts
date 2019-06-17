@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {NotificationData} from '../../models/NotificationData';
 import {NotificatorService} from '../../../core/services/common/notificator.service';
-import {UtilsService} from '../../../core/services/common/utils.service';
+import {doAfterDelay} from '../../utils';
 import {flyInOut} from '../../animations/Animations';
 
 @Component({
@@ -16,7 +16,6 @@ export class NotificatorComponent {
 
   constructor(
     private notificator: NotificatorService,
-    private utils: UtilsService
   ) {
     this.notificator.addNotification.subscribe(notificationData => {
       this.processNotification(notificationData);
@@ -28,7 +27,7 @@ export class NotificatorComponent {
   private processNotification(data: NotificationData): void {
     this.notifications.push(data);
 
-    this.utils.doAfterDelay(data.delay, () => {
+    doAfterDelay(data.delay, () => {
       this.notifications.shift();
     });
   }

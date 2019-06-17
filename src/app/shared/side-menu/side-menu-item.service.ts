@@ -4,7 +4,7 @@ import {Vo} from '../../core/models/Vo';
 import {SideMenuItem} from './side-menu.component';
 import {Group} from '../../core/models/Group';
 import {RichMember} from '../../core/models/RichMember';
-import {UtilsService} from '../../core/services/common/utils.service';
+import {parseFullName} from '../utils';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,6 @@ export class SideMenuItemService {
 
   constructor(
     private translate: TranslateService,
-    private utils: UtilsService
   ) { }
 
   parseGroup(group: Group): SideMenuItem {
@@ -114,7 +113,7 @@ export class SideMenuItemService {
   parseMember(member: RichMember): SideMenuItem {
     return {
       baseLink: `/organizations/${member.voId}/members/${member.id}`,
-      label: this.utils.parseFullName(member.user),
+      label: parseFullName(member.user),
       links: [
         {
           label: this.translate.instant('MENU_ITEMS.MEMBER.OVERVIEW'),

@@ -1,9 +1,9 @@
 import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, ViewChild} from '@angular/core';
-import { MatCheckboxChange } from '@angular/material/checkbox';
-import { MatSort } from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
+import {MatCheckboxChange} from '@angular/material/checkbox';
+import {MatSort} from '@angular/material/sort';
+import {MatTableDataSource} from '@angular/material/table';
 import {RichMember} from '../../../core/models/RichMember';
-import {UtilsService} from '../../../core/services/common/utils.service';
+import {parseEmail, parseFullName, parseLogins, parseStatusColor, parseStatusIcon} from '../../../shared/utils';
 
 export declare class MemberSelectChange {
   member: RichMember;
@@ -29,7 +29,6 @@ export interface TableMember {
 export class MembersListComponent implements OnChanges {
 
   constructor(
-    private utils: UtilsService
   ) { }
 
   private sort: MatSort;
@@ -66,12 +65,12 @@ export class MembersListComponent implements OnChanges {
     return {
       memberId: richMember.id,
       voId: richMember.voId,
-      fullName: this.utils.parseFullName(richMember.user),
-      statusIcon: this.utils.parseStatusIcon(richMember),
+      fullName: parseFullName(richMember.user),
+      statusIcon: parseStatusIcon(richMember),
       status: richMember.status,
-      statusColor: this.utils.parseStatusColor(richMember),
-      email: this.utils.parseEmail(richMember),
-      logins: this.utils.parseLogins(richMember)
+      statusColor: parseStatusColor(richMember),
+      email: parseEmail(richMember),
+      logins: parseLogins(richMember)
     };
   }
 

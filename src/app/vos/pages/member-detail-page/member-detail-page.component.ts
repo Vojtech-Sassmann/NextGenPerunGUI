@@ -6,7 +6,6 @@ import {RichMember} from '../../../core/models/RichMember';
 import {MembersService} from '../../../core/services/api/members.service';
 import {SideMenuItemService} from '../../../shared/side-menu/side-menu-item.service';
 import {SideMenuService} from '../../../core/services/common/side-menu.service';
-import {UtilsService} from '../../../core/services/common/utils.service';
 import {AttributesService} from '../../../core/services/api/attributes.service';
 import {TranslateService} from '@ngx-translate/core';
 
@@ -23,7 +22,6 @@ export class MemberDetailPageComponent implements OnInit {
     private translate: TranslateService,
     private sideMenuService: SideMenuService,
     private membersService: MembersService,
-    private utils: UtilsService,
     private voService: VoService,
     private route: ActivatedRoute,
   ) { }

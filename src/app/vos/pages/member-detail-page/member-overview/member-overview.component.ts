@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {RichMember} from '../../../../core/models/RichMember';
-import {UtilsService} from '../../../../core/services/common/utils.service';
-import {Urns} from '../../../../shared/Urns';
+import {parseFullName, parseStatusColor, parseStatusIcon} from '../../../../shared/utils';
+import {Urns} from '../../../../shared/urns';
 import {AttributesService} from '../../../../core/services/api/attributes.service';
 import {TranslateService} from '@ngx-translate/core';
 import {ActivatedRoute} from '@angular/router';
@@ -16,7 +16,6 @@ import {MenuItem} from '../../../../shared/models/MenuItem';
 export class MemberOverviewComponent implements OnInit {
 
   constructor(
-    private utils: UtilsService,
     private attributeService: AttributesService,
     private membersService: MembersService,
     private translate: TranslateService,
@@ -37,9 +36,9 @@ export class MemberOverviewComponent implements OnInit {
 
       this.membersService.getRichMemberWithAttributes(memberId).subscribe(member => {
         this.member = member;
-        this.fullName = this.utils.parseFullName(this.member.user);
-        this.statusIcon = this.utils.parseStatusIcon(this.member);
-        this.statusIconColor = this.utils.parseStatusColor(this.member);
+        this.fullName = parseFullName(this.member.user);
+        this.statusIcon = parseStatusIcon(this.member);
+        this.statusIconColor = parseStatusColor(this.member);
 
         this.initNavItems();
 
