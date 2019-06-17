@@ -1,1 +1,6 @@
+<p *ngIf="parentGroup !== null">
+  {{'GROUP_DETAIL.SUBGROUP_INFO' | translate}}<a class="group-link" [routerLink]="['/organizations', parentGroup.voId, 'groups', parentGroup.id]">
+  {{parentGroup.name}}
+</a>
+</p>
 <app-menu-buttons-field [items]="navItems" [size]="'small'"></app-menu-buttons-field>

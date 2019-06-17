@@ -539,7 +539,7 @@ button:focus {
   text-decoration: underline;
 
   &:hover {
-    color: #lighten($group-color, 10%);
+    color: lighten($group-color, 10%);
   }
 }
 
