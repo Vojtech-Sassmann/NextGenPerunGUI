@@ -31,6 +31,18 @@ export class SideMenuItemService {
           label: this.translate.instant('MENU_ITEMS.ADMIN.ATTRIBUTES'),
           url: ['/admin/attributes'],
           activatedRegex: '^/admin/attributes$'
+        },
+        {
+          label: this.translate.instant('MENU_ITEMS.ADMIN.VISUALIZER'),
+          url: ['/admin/visualizer'],
+          activatedRegex: '^/admin/visualizer$',
+          children: [
+            {
+              label: this.translate.instant('MENU_ITEMS.VISUALIZER.ATTR_DEPENDENCIES'),
+              url: ['/admin/visualizer/attrDependencies'],
+              activatedRegex: '^/admin/visualizer/attrDependencies'
+            }
+          ]
         }
       ]
     };

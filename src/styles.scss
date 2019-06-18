@@ -32,6 +32,7 @@ $facility-color: #E64A19;
 $group-color: #388E3C;
 $member-color: #BF360C;
 $admin-color: #4a148c;
+$user-color: #00695c;
 
 .vo-theme {
   $vo-primary: mat-palette($mat-indigo, 800);
@@ -198,6 +199,11 @@ button:focus {
   box-shadow: 0 2px 8px 0 rgba(0,0,0,0.35);
 }
 
+.button-shadow {
+  -webkit-box-shadow: 0 2px 8px 0 rgba(0,0,0,0.35);
+  -moz-box-shadow: 0 2px 8px 0 rgba(0,0,0,0.35);
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.35);
+}
 
 .menu-items {
   display: flex;
@@ -407,6 +413,10 @@ button:focus {
   background-color: $admin-color;
 }
 
+.user-bg-color {
+  background-color: $user-color;
+}
+
 .setting-item {
   font-size: 1.15rem;
   font-weight: 500;
@@ -456,7 +466,7 @@ button:focus {
 
 
   &:hover {
-    background-color: lighten($vo-color, 10%);
+    background-color: lighten($vo-color, 5%);
   }
 
   &:active {
@@ -474,7 +484,7 @@ button:focus {
   border-radius: 0;
 
   &:hover {
-    background-color: lighten($facility-color, 10%);
+    background-color: lighten($facility-color, 5%);
   }
 
   &:active {
@@ -492,7 +502,7 @@ button:focus {
   border-radius: 0;
 
   &:hover {
-    background-color: lighten($group-color, 10%);
+    background-color: lighten($group-color, 5%);
   }
 
   &:active {
@@ -510,7 +520,7 @@ button:focus {
   border-radius: 0;
 
   &:hover {
-    background-color: lighten($member-color, 10%);
+    background-color: lighten($member-color, 5%);
   }
 
   &:active {
@@ -528,11 +538,29 @@ button:focus {
   border-radius: 0;
 
   &:hover {
-    background-color: lighten($admin-color, 10%);
+    background-color: lighten($admin-color, 5%);
   }
 
   &:active {
     background-color: darken($admin-color, 5%);
+  }
+
+  &:hover {
+    color: #ffffff;
+  }
+}
+
+.user-btn {
+  background-color: $user-color;
+  color: #ffffff;
+  border-radius: 0;
+
+  &:hover {
+    background-color: lighten($user-color, 5%);
+  }
+
+  &:active {
+    background-color: darken($user-color, 5%);
   }
 
   &:hover {
@@ -602,13 +630,6 @@ button:focus {
 .card {
   border-radius: 0 !important;
 }
-
-// remove top border so the button position on all tabs is the same event when there is input used
-//.no-border-mat-input {
-//  .mat-form-field-infix {
-//    border-top: 0;
-//  }
-//}
 
 //colors for material icons
 .material-icons.orange {

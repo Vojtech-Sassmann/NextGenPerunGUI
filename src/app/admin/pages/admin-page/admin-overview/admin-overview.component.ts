@@ -16,6 +16,12 @@ export class AdminOverviewComponent implements OnInit {
       url: '/admin/attributes',
       label: 'MENU_ITEMS.ADMIN.ATTRIBUTES',
       style: 'admin-btn'
+    },
+    {
+      icon: 'preview-white.svg',
+      url: '/admin/visualizer',
+      label: 'MENU_ITEMS.ADMIN.VISUALIZER',
+      style: 'admin-btn'
     }
   ];
 

@@ -2,6 +2,7 @@
   "MAIN_MENU": {
     "VOS": "Organizations",
     "FACILITIES": "Facilities",
+    "USERS": "Users",
     "ADMIN": "Admin"
   },
   "VO_MANAGEMENT": {
@@ -148,7 +149,11 @@
     "ADMIN": {
       "TITLE": "Perun admin",
       "OVERVIEW": "Overview",
-      "ATTRIBUTES": "Attributes"
+      "ATTRIBUTES": "Attributes",
+      "VISUALIZER": "Visualizer"
+    },
+    "VISUALIZER": {
+      "ATTR_DEPENDENCIES": "Modules dependencies"
     }
   },
   "DIALOGS": {
@@ -208,6 +213,9 @@
       "CREATE": "New attribute definition...",
       "DELETE": "Delete",
       "SEARCH": "Search"
+    },
+    "VISUALIZER": {
+      "ATTR_DEPENDENCIES": "Attribute dependencies"
     }
   }
 }
