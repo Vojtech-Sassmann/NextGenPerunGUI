@@ -215,7 +215,10 @@
       "SEARCH": "Search"
     },
     "VISUALIZER": {
-      "ATTR_DEPENDENCIES": "Attribute dependencies"
+      "ATTR_DEPENDENCIES": {
+        "TITLE": "Attribute modules dependencies",
+        "HINT": "You can use arrow keys to move the image."
+      }
     }
   }
 }

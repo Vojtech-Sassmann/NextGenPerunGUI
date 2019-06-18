@@ -4,7 +4,9 @@ import {AdminPageComponent} from './pages/admin-page/admin-page.component';
 import {AdminOverviewComponent} from './pages/admin-page/admin-overview/admin-overview.component';
 import {AdminAttributesComponent} from './pages/admin-page/admin-attributes/admin-attributes.component';
 import {AdminVisualizerComponent} from './pages/admin-page/admin-visualizer/admin-visualizer.component';
-import {VisualizerAttrModulesComponent} from './pages/admin-page/admin-visualizer/visualizer-attr-modules/visualizer-attr-modules.component';
+import {
+  VisualizerAttrModulesComponent
+} from './pages/admin-page/admin-visualizer/visualizer-attr-modules/visualizer-attr-modules.component';
 import {VisualizerOverviewComponent} from './pages/admin-page/admin-visualizer/visualizer-overview/visualizer-overview.component';
 
 const routes: Routes = [

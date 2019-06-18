@@ -3,6 +3,7 @@ import {ApiService} from './api.service';
 import {Observable} from 'rxjs';
 import {Attribute} from '../../models/Attribute';
 import {AttributeDefinition} from '../../models/AttributeDefinition';
+import {Graph} from '../../models/Graph';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,10 @@ export class AttributesService {
       vo: voId,
       attribute: attribute
     });
+  }
+
+  getAttributeModulesDependenciesGraphText(format: string): Observable<Graph> {
+    return this.apiService.get(`json/attributesManager/getAttributeModulesDependenciesGraphText?format=${format}`);
   }
 
   getAttributesDefinition(): Observable<AttributeDefinition[]> {
