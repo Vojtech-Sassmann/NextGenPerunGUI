@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {ApiService} from './api.service';
 import {Observable} from 'rxjs';
 import {Attribute} from '../../models/Attribute';
+import {AttributeDefinition} from '../../models/AttributeDefinition';
 
 @Injectable({
   providedIn: 'root'
@@ -25,5 +26,9 @@ export class AttributesService {
       vo: voId,
       attribute: attribute
     });
+  }
+
+  getAttributesDefinition(): Observable<AttributeDefinition[]> {
+    return this.apiService.get('json/attributesManager/getAttributesDefinition');
   }
 }

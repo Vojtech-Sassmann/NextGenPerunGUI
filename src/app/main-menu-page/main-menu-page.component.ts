@@ -25,6 +25,12 @@ export class MainMenuPageComponent implements OnInit {
       url: '/facilities',
       label: 'MAIN_MENU.FACILITIES',
       style: 'facility-btn'
+    },
+    {
+      icon: 'perun_admin-white.svg',
+      url: '/admin',
+      label: 'MAIN_MENU.ADMIN',
+      style: 'admin-btn'
     }
   ];
 

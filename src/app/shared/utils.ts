@@ -115,7 +115,7 @@ export function parseFullName(user: User): string {
 }
 
 export async function doAfterDelay(delayMs: number, callback: () => void) {
-  await this.delay(delayMs);
+  await delay(delayMs);
   callback();
 }
 

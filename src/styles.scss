@@ -31,6 +31,7 @@ $vo-color: #283593;
 $facility-color: #E64A19;
 $group-color: #388E3C;
 $member-color: #BF360C;
+$admin-color: #4a148c;
 
 .vo-theme {
   $vo-primary: mat-palette($mat-indigo, 800);
@@ -54,6 +55,14 @@ $member-color: #BF360C;
   $member-theme: mat-light-theme($member-primary, $member-accent);
 
   @include angular-material-theme($member-theme);
+}
+
+.admin-theme {
+  $admin-primary: mat-palette($mat-purple, 900);
+  $admin-accent: mat-palette($mat-green, 600);
+  $admin-theme: mat-light-theme($admin-primary, $admin-accent);
+
+  @include angular-material-theme($admin-theme);
 }
 
 body {
@@ -111,7 +120,7 @@ button:focus {
   }
 }
 #nav-menu {
-  background: #2c2c2c;
+  background: #131313;
   position: fixed;
   width: 100%;
   z-index: 99999;
@@ -394,6 +403,10 @@ button:focus {
   background-color: $member-color;
 }
 
+.admin-bg-color {
+  background-color: $admin-color;
+}
+
 .setting-item {
   font-size: 1.15rem;
   font-weight: 500;
@@ -502,6 +515,24 @@ button:focus {
 
   &:active {
     background-color: darken($member-color, 5%);
+  }
+
+  &:hover {
+    color: #ffffff;
+  }
+}
+
+.admin-btn {
+  background-color: $admin-color;
+  color: #ffffff;
+  border-radius: 0;
+
+  &:hover {
+    background-color: lighten($admin-color, 10%);
+  }
+
+  &:active {
+    background-color: darken($admin-color, 5%);
   }
 
   &:hover {

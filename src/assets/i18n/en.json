@@ -1,7 +1,8 @@
 {
   "MAIN_MENU": {
     "VOS": "Organizations",
-    "FACILITIES": "Facilities"
+    "FACILITIES": "Facilities",
+    "ADMIN": "Admin"
   },
   "VO_MANAGEMENT": {
     "TITLE": "Organizations",
@@ -143,6 +144,11 @@
     "MEMBER": {
       "OVERVIEW": "Overview",
       "GROUPS": "Groups"
+    },
+    "ADMIN": {
+      "TITLE": "Perun admin",
+      "OVERVIEW": "Overview",
+      "ATTRIBUTES": "Attributes"
     }
   },
   "DIALOGS": {
@@ -187,6 +193,21 @@
     "NOTIFICATION": {
       "DEFAULT_ACTION": "Show",
       "DIALOG_CLOSE": "Close"
+    }
+  },
+  "ADMIN": {
+    "TITLE": "Perun admin",
+    "ATTRIBUTES": {
+      "TITLE": "Attribute definitions",
+      "TABLE_ATTR_ID": "Id",
+      "TABLE_ATTR_FRIENDLY_NAME": "Friendly name",
+      "TABLE_ATTR_ENTITY": "Entity",
+      "TABLE_ATTR_DEF": "Def",
+      "TABLE_ATTR_TYPE": "Type",
+      "TABLE_ATTR_UNIQUE": "Unique",
+      "CREATE": "New attribute definition...",
+      "DELETE": "Delete",
+      "SEARCH": "Search"
     }
   }
 }

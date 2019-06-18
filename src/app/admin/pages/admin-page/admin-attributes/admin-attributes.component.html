@@ -1,0 +1,19 @@
+<div>
+  <h1 class="page-subtitle">{{'ADMIN.ATTRIBUTES.TITLE' | translate}}</h1>
+
+  <button mat-flat-button color="accent" class="mr-2">
+    {{'ADMIN.ATTRIBUTES.CREATE' | translate}}
+  </button>
+  <button mat-flat-button color="warn" class="mr-2" [disabled]="selected.selected.length === 0">
+    {{'ADMIN.ATTRIBUTES.DELETE' | translate}}
+  </button>
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="{{'ADMIN.ATTRIBUTES.SEARCH' | translate}}">
+  </mat-form-field>
+
+  <app-attr-def-list
+    [definitions]="attrDefinitions"
+    [selection]="selected"
+    [filterValue]="filterValue">
+  </app-attr-def-list>
+</div>

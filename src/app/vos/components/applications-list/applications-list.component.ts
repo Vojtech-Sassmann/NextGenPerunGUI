@@ -32,8 +32,6 @@ export class ApplicationsListComponent implements OnChanges {
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
   private sort: MatSort;
 
-
-
   ngOnChanges(changes: SimpleChanges) {
     this.dataSource = new MatTableDataSource<Application>(this.applications);
     this.setDataSource();

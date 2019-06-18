@@ -11,6 +11,10 @@ const routes: Routes = [
     path: 'organizations',
     loadChildren: () => import('./vos/vos.module').then(m => m.VosModule)
   },
+  {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
+  }
 ];
 
 @NgModule({
