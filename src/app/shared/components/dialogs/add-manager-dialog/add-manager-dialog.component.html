@@ -37,6 +37,7 @@
         {{'DIALOGS.ADD_MANAGERS.NO_USERS_FOUND' | translate}}
       </div>
       <app-users-list
+        [disableClick]="true"
         [selection]="selection"
         [users]="users"
         *ngIf="users.length !== 0">

@@ -69,5 +69,8 @@ export class FacilityAllowedGroupsComponent implements OnInit {
         this.loading = false;
       });
     });
+    if (this.vos.length === 0) {
+      this.loading = false;
+    }
   }
 }

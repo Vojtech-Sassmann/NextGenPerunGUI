@@ -1,0 +1,25 @@
+<div (keyup)="onKeyInput($event)">
+  <h1 class="page-subtitle">{{'ADMIN.USERS.TITLE' | translate}}</h1>
+  <mat-form-field class="mr-2 search-field no-border-mat-input">
+    <label>
+      <input matInput autocomplete="false" placeholder="{{'ADMIN.USERS.SEARCH_PLACEHOLDER' | translate}}" [(ngModel)]="searchString">
+    </label>
+  </mat-form-field>
+  <button mat-flat-button color="primary" class="mr-2" [disabled]="searchString.length === 0" (click)="onSearchByString()">
+    <mat-icon>search</mat-icon>
+  </button>
+  <mat-spinner *ngIf="loading" class="ml-auto mr-auto">
+  </mat-spinner>
+  <div *ngIf="!loading">
+    <app-users-list
+      *ngIf="users !== undefined && users.length > 0"
+      [users]="users">
+    </app-users-list>
+    <div *ngIf="!firstSearchDone" class="perun-alert info-alert">
+      {{'ADMIN.USERS.SEARCH_INFO' | translate}}
+    </div>
+    <div *ngIf="firstSearchDone && users.length === 0" class="perun-alert warn-alert">
+      {{'ADMIN.USERS.NO_USERS_FOUND' | translate}}
+    </div>
+  </div>
+</div>

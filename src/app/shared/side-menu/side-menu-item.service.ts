@@ -65,6 +65,11 @@ export class SideMenuItemService {
           activatedRegex: '^/admin/attributes$'
         },
         {
+          label: 'MENU_ITEMS.ADMIN.USERS',
+          url: ['/admin/users'],
+          activatedRegex: '^/admin/users$'
+        },
+        {
           label: 'MENU_ITEMS.ADMIN.VISUALIZER',
           url: ['/admin/visualizer'],
           activatedRegex: '^/admin/visualizer$',

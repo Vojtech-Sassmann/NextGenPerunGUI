@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Resource} from '../../../core/models/Resource';
-import {ActivatedRoute, RouterOutlet} from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 import {ResourcesService} from '../../../core/services/api/resources.service';
 import {fadeIn} from '../../../shared/animations/Animations';
 import {SideMenuService} from '../../../core/services/common/side-menu.service';
@@ -42,9 +42,5 @@ export class ResourceDetailPageComponent implements OnInit {
         });
       });
     });
-  }
-
-  prepareRoute(outlet: RouterOutlet) {
-    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
   }
 }

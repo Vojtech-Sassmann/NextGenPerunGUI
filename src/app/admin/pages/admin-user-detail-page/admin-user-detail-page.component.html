@@ -1,0 +1,15 @@
+<div class="container-fluid pl-xl-5 pr-xl-5 user-theme" *ngIf="user !== undefined">
+  <app-back-button>
+  </app-back-button>
+  <h1 class="page-title">
+    {{'ADMIN_USER.TITLE' | translate}}
+    <a class="user-link" [routerLink]="['/admin/users', user.id]">
+      {{user | userFullName}}
+    </a>
+    <span class="text-muted">
+      &nbsp;#{{user.id}}
+    </span>
+  </h1>
+  <app-animated-router-outlet></app-animated-router-outlet>
+</div>
+

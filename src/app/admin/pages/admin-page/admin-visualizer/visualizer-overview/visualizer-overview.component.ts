@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, HostBinding} from '@angular/core';
 import {MenuItem} from '../../../../../shared/models/MenuItem';
 
 @Component({
@@ -7,6 +7,8 @@ import {MenuItem} from '../../../../../shared/models/MenuItem';
   styleUrls: ['./visualizer-overview.component.scss']
 })
 export class VisualizerOverviewComponent {
+
+  @HostBinding('class.router-component') true;
 
   constructor() { }
 

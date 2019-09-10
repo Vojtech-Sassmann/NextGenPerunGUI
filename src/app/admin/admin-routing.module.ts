@@ -14,6 +14,8 @@ import {
 import {
   UserDestinationGraphComponent
 } from './pages/admin-page/admin-visualizer/user-destination-relationship/user-destination-graph/user-destination-graph.component';
+import {AdminUsersComponent} from './pages/admin-page/admin-users/admin-users.component';
+import {AdminUserDetailPageComponent} from './pages/admin-user-detail-page/admin-user-detail-page.component';
 
 const routes: Routes = [
   {
@@ -22,11 +24,18 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: AdminOverviewComponent
+        component: AdminOverviewComponent,
+        data: {animation: 'AdminOverviewPage'}
       },
       {
         path: 'attributes',
-        component: AdminAttributesComponent
+        component: AdminAttributesComponent,
+        data: {animation: 'AdminAttributesPage'}
+      },
+      {
+        path: 'users',
+        component: AdminUsersComponent,
+        data: {animation: 'AdminUsersPage'}
       },
       {
         path: 'visualizer',
@@ -34,24 +43,33 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            component: VisualizerOverviewComponent
+            component: VisualizerOverviewComponent,
+            data: {animation: 'VisualizerOverviewPage'}
           },
           {
             path: 'attrDependencies',
-            component: VisualizerAttrModulesComponent
+            component: VisualizerAttrModulesComponent,
+            data: {animation: 'VisualizerAttrModulesPage'}
           },
           {
             path: 'userDestinationRelationship',
-            component: UserDestinationRelationshipComponent
+            component: UserDestinationRelationshipComponent,
+            data: {animation: 'UserDestinationRelationshipPage'}
           },
           {
             path: 'userDestinationRelationship/graph',
-            component: UserDestinationGraphComponent
+            component: UserDestinationGraphComponent,
+            data: {animation: 'UserDestinationGraphPage'}
           }
         ]
       }
     ]
-  }
+  },
+  {
+    path: 'users/:userId',
+    component: AdminUserDetailPageComponent,
+    data: {animation: 'AdminUserDetailPage'}
+  },
 ];
 
 @NgModule({

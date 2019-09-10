@@ -1,8 +1,7 @@
 import {Component, Input, OnChanges, SimpleChanges, ViewChild} from '@angular/core';
 import {RichUser} from '../../../core/models/RichUser';
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
-import {getRichUserAttribute, parseFullName} from '../../utils';
-import {Urns} from '../../urns';
+import {parseFullName, parseUserEmail, parseVo} from '../../utils';
 import {SelectionModel} from '@angular/cdk/collections';
 
 @Component({
@@ -28,15 +27,15 @@ export class UsersListComponent implements OnChanges {
   private sort: MatSort;
 
   @Input()
-  searchString: string;
+  hideColumns: string[] = [];
 
   @Input()
-  hideColumns: string[] = [];
+  disableClick = false;
 
   @Input()
   selection = new SelectionModel<RichUser>(true, []);
 
-  displayedColumns: string[] = ['select', 'id', 'name', 'organization', 'email'];
+  displayedColumns: string[] = ['select', 'id', 'name', 'email', 'organization'];
 
   dataSource: MatTableDataSource<RichUser>;
 
@@ -46,11 +45,11 @@ export class UsersListComponent implements OnChanges {
       this.dataSource.sortingDataAccessor = (item, property) => {
         switch (property) {
           case 'name':
-            return this.parseFullName(item);
+            return parseFullName(item);
           case 'email':
-            return this.getPreferredMail(item);
+            return parseUserEmail(item);
           case 'organization':
-            return this.getUserOrganization(item);
+            return parseVo(item);
           default:
             return item[property];
         }
@@ -63,19 +62,6 @@ export class UsersListComponent implements OnChanges {
     this.dataSource = new MatTableDataSource<RichUser>(this.users);
     this.dataSource.paginator = this.paginator;
     this.setDataSource();
-  }
-
-  parseFullName(user: RichUser): string {
-    return parseFullName(user);
-  }
-
-  getUserOrganization(user: RichUser): string {
-    const res = getRichUserAttribute(user, Urns.USER_DEF_ORGANIZATION);
-    return res === null ? '' : res.value;
-  }
-
-  getPreferredMail(user: RichUser) {
-    return getRichUserAttribute(user, Urns.USER_DEF_PREFERRED_MAIL).value;
   }
 
 

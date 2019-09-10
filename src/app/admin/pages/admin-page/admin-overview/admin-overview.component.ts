@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostBinding, OnInit} from '@angular/core';
 import {MenuItem} from '../../../../shared/models/MenuItem';
 
 @Component({
@@ -8,6 +8,8 @@ import {MenuItem} from '../../../../shared/models/MenuItem';
 })
 export class AdminOverviewComponent implements OnInit {
 
+  @HostBinding('class.router-component') true;
+
   constructor() { }
 
   navItems: MenuItem[] = [
@@ -15,6 +17,12 @@ export class AdminOverviewComponent implements OnInit {
       icon: 'attributes-white.svg',
       url: '/admin/attributes',
       label: 'MENU_ITEMS.ADMIN.ATTRIBUTES',
+      style: 'admin-btn'
+    },
+    {
+      icon: 'user-white.svg',
+      url: '/admin/users',
+      label: 'MENU_ITEMS.ADMIN.USERS',
       style: 'admin-btn'
     },
     {

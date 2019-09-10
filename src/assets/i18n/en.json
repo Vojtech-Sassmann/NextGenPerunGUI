@@ -467,7 +467,8 @@
       "TITLE": "Perun admin",
       "OVERVIEW": "Overview",
       "ATTRIBUTES": "Attributes",
-      "VISUALIZER": "Visualizer"
+      "VISUALIZER": "Visualizer",
+      "USERS": "Users"
     },
     "VISUALIZER": {
       "ATTR_DEPENDENCIES": "Modules dependencies",
@@ -854,6 +855,9 @@
       "DEFAULT_RPC_ERROR_MESSAGE": "An operation failed."
     }
   },
+  "ADMIN_USER": {
+    "TITLE": "User - "
+  },
   "ADMIN": {
     "TITLE": "Perun admin",
     "ATTRIBUTES": {
@@ -867,6 +871,12 @@
       "CREATE": "New attribute definition...",
       "DELETE": "Delete",
       "SEARCH": "Search"
+    },
+    "USERS": {
+      "TITLE": "Users",
+      "SEARCH_PLACEHOLDER":"Search by name, email or login",
+      "SEARCH_INFO": "You can search users by name, email or login or you can list all users without vo.",
+      "NO_USERS_FOUND": "No users found."
     },
     "VISUALIZER": {
       "ATTR_DEPENDENCIES": {

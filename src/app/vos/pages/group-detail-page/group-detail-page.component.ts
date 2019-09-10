@@ -46,8 +46,4 @@ export class GroupDetailPageComponent implements OnInit {
       });
     });
   }
-
-  prepareRoute(outlet: RouterOutlet) {
-    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
-  }
 }

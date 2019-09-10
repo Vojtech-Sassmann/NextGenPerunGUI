@@ -34,6 +34,7 @@
       {{'VO_DETAIL.SETTINGS.MANAGERS.NO_MANAGERS' | translate}}
     </div>
     <app-users-list
+      [disableClick]="true"
       *ngIf="managers !== null && managers.length > 0 && selected === 'user'"
       [users]="managers"
       [selection]="selectionUsers">

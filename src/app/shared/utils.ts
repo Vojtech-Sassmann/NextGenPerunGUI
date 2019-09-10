@@ -260,11 +260,11 @@ export function indexOfVo(recent: number[], id: number) {
 }
 
 /**
- * Gets Vo or External source of given user. Vo has priority over External source.
+ * Gets Vo of given user.
  *
  * @param richUser RichUser
  */
-export function parseVoOrExtSource(richUser: RichUser): string {
+export function parseVo(richUser: RichUser): string {
   let result = '';
   if (richUser) {
     richUser.userAttributes.forEach(attr => {
@@ -272,8 +272,6 @@ export function parseVoOrExtSource(richUser: RichUser): string {
         result = attr.value;
       }
     });
-
-    // TODO For now works only for organization.
   }
   return result;
 }

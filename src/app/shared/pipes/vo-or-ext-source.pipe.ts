@@ -1,13 +1,13 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import {parseVoOrExtSource} from '../utils';
+import {parseVo} from '../utils';
 
 @Pipe({
-  name: 'voOrExtSource'
+  name: 'userVo'
 })
-export class VoOrExtSourcePipe implements PipeTransform {
+export class UserVoPipe implements PipeTransform {
 
   transform(value: any, args?: any): any {
-    return parseVoOrExtSource(value);
+    return parseVo(value);
   }
 
 }

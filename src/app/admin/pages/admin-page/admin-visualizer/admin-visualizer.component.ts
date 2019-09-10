@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostBinding, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-admin-visualizer',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-visualizer.component.scss']
 })
 export class AdminVisualizerComponent implements OnInit {
+
+  @HostBinding('class.router-component') true;
 
   constructor() { }
 

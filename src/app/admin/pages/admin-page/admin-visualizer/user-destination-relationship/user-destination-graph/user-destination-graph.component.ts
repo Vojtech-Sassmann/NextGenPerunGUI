@@ -1,4 +1,4 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import {Component, HostBinding, HostListener, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {User} from '../../../../../../core/models/User';
 import {UsersService} from '../../../../../../core/services/api/users.service';
@@ -24,6 +24,8 @@ import {TranslateService} from '@ngx-translate/core';
   styleUrls: ['./user-destination-graph.component.scss']
 })
 export class UserDestinationGraphComponent implements OnInit {
+
+  @HostBinding('class.router-component') true;
 
   constructor(private route: ActivatedRoute,
               private userService: UsersService,

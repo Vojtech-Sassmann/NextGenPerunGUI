@@ -32,7 +32,7 @@
       </ng-container>
       <ng-container matColumnDef="voExtSource">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'MEMBERS_CANDIDATES_LIST.ORGANIZATION' | translate}}</th>
-        <td mat-cell *matCellDef="let memberCandidate">{{memberCandidate.richUser | voOrExtSource}}</td>
+        <td mat-cell *matCellDef="let memberCandidate">{{memberCandidate.richUser | userVo}}</td>
       </ng-container>
       <ng-container matColumnDef="email">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'MEMBERS_CANDIDATES_LIST.EMAIL' | translate}}</th>

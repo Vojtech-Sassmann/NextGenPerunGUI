@@ -1,5 +1,4 @@
 import {Component, HostBinding, OnInit} from '@angular/core';
-import {RouterOutlet} from '@angular/router';
 import {fadeIn} from '../../../../shared/animations/Animations';
 
 @Component({
@@ -18,9 +17,5 @@ export class MemberSettingsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  }
-
-  prepareRoute(outlet: RouterOutlet) {
-    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
   }
 }

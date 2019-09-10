@@ -22,10 +22,6 @@ const routes: Routes = [
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
   },
   {
-    path: 'users',
-    loadChildren: () => import('./users/users.module').then(m => m.UsersModule),
-  },
-  {
     path: 'facilities',
     loadChildren: () => import('./facilities/facilities.module').then(m => m.FacilitiesModule),
   },

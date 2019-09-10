@@ -1,8 +1,8 @@
-import { VoOrExtSourcePipe } from './vo-or-ext-source.pipe';
+import { UserVoPipe } from './vo-or-ext-source.pipe';
 
 describe('VoOrExtSourcePipe', () => {
   it('create an instance', () => {
-    const pipe = new VoOrExtSourcePipe();
+    const pipe = new UserVoPipe();
     expect(pipe).toBeTruthy();
   });
 });

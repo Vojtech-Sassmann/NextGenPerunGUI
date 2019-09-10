@@ -35,4 +35,15 @@
     [showOpen]="adminItemOpened"
     [item]="adminItem">
   </app-side-menu-root-item>
+  <div *ngIf="authResolver.isPerunAdmin()">
+    <div
+      *ngFor="let item of adminItems; let i = index"
+      @rollInOut
+      class="overflow-hidden">
+      <app-side-menu-item
+        [item]="item"
+        [index]="i">
+      </app-side-menu-item>
+    </div>
+  </div>
 </div>

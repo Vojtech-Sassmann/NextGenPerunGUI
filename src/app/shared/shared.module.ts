@@ -104,7 +104,7 @@ import { RefreshButtonComponent } from './components/refresh-button/refresh-butt
 import { AddMemberDialogComponent } from './components/dialogs/add-member-dialog/add-member-dialog.component';
 import {MembersCandidatesListComponent} from './components/members-candidates-list/members-candidates-list.component';
 import {MemberCandidateEmailPipe} from './pipes/member-candidate-email.pipe';
-import {VoOrExtSourcePipe} from './pipes/vo-or-ext-source.pipe';
+import {UserVoPipe} from './pipes/vo-or-ext-source.pipe';
 import { CreateResourceTagDialogComponent } from './components/dialogs/create-resource-tag-dialog/create-resource-tag-dialog.component';
 import { DeleteResourceTagDialogComponent } from './components/dialogs/delete-resource-tag-dialog/delete-resource-tag-dialog.component';
 import { MoveGroupDialogComponent } from './components/dialogs/move-group-dialog/move-group-dialog.component';
@@ -124,6 +124,9 @@ import { TagBarComponent } from './components/dialogs/add-edit-notification-dial
 import {
   NotificationsCopyMailsDialogComponent
 } from './components/dialogs/notifications-copy-mails-dialog/notifications-copy-mails-dialog.component';
+import { AnimatedRouterOutletComponent } from './components/animated-router-outlet/animated-router-outlet.component';
+import { UserEmailPipe } from './pipes/user-email.pipe';
+import { UserDetailComponent } from './components/user-detail/user-detail.component';
 
 @NgModule({
   imports: [
@@ -240,7 +243,7 @@ import {
     AddMemberDialogComponent,
     MembersCandidatesListComponent,
     MemberCandidateEmailPipe,
-    VoOrExtSourcePipe,
+    UserVoPipe,
     AttributesListComponent,
     MatChipsModule,
     RefreshButtonComponent,
@@ -248,7 +251,8 @@ import {
     MatExpansionModule,
     MatMenuModule,
     GroupMenuComponent,
-    ScrollingModule
+    ScrollingModule,
+    AnimatedRouterOutletComponent
   ],
   entryComponents: [
     CreateGroupDialogComponent,
@@ -341,7 +345,7 @@ import {
     AddMemberDialogComponent,
     MembersCandidatesListComponent,
     MemberCandidateEmailPipe,
-    VoOrExtSourcePipe,
+    UserVoPipe,
     CreateAttributeDialogComponent,
     AttributeValueComponent,
     AttributeValueBooleanComponent,
@@ -358,7 +362,10 @@ import {
     AddEditNotificationDialogComponent,
     TagSectionComponent,
     TagBarComponent,
-    NotificationsCopyMailsDialogComponent
+    NotificationsCopyMailsDialogComponent,
+    AnimatedRouterOutletComponent,
+    UserEmailPipe,
+    UserDetailComponent
   ],
   providers: [
     AnyToStringPipe,

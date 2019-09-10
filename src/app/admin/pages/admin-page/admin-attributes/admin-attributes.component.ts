@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, HostBinding, OnInit} from '@angular/core';
 import {AttributesService} from '../../../../core/services/api/attributes.service';
 import {AttributeDefinition} from '../../../../core/models/AttributeDefinition';
 import {SelectionModel} from '@angular/cdk/collections';
@@ -9,6 +9,8 @@ import {SelectionModel} from '@angular/cdk/collections';
   styleUrls: ['./admin-attributes.component.scss']
 })
 export class AdminAttributesComponent implements OnInit {
+
+  @HostBinding('class.router-component') true;
 
   constructor(
     private attrService: AttributesService
