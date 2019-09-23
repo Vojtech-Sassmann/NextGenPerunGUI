@@ -1,5 +1,6 @@
 <div class="accordion entity-menu-accordion" id="sideMenuAccordion">
   <app-side-menu-root-item
+    [sideNav]="sideNav"
     [item]="accessItem">
   </app-side-menu-root-item>
 
@@ -8,6 +9,7 @@
     @rollInOut
     class="overflow-hidden">
     <app-side-menu-item
+      [sideNav]="sideNav"
       [item]="item"
       [index]="i"
       [showOpen]="true">
@@ -15,6 +17,7 @@
   </div>
 
   <app-side-menu-root-item
+    [sideNav]="sideNav"
     *ngIf="authResolver.canManageFacilities()"
     [item]="facilityItem">
   </app-side-menu-root-item>
@@ -24,6 +27,7 @@
       @rollInOut
       class="overflow-hidden">
       <app-side-menu-item
+        [sideNav]="sideNav"
         [item]="item"
         [index]="i">
       </app-side-menu-item>
@@ -31,6 +35,7 @@
 
   </div>
   <app-side-menu-root-item
+    [sideNav]="sideNav"
     *ngIf="authResolver.isPerunAdmin()"
     [showOpen]="adminItemOpened"
     [item]="adminItem">
@@ -41,6 +46,7 @@
       @rollInOut
       class="overflow-hidden">
       <app-side-menu-item
+        [sideNav]="sideNav"
         [item]="item"
         [index]="i">
       </app-side-menu-item>

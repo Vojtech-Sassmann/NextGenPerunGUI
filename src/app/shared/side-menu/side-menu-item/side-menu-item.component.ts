@@ -2,6 +2,7 @@ import {Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChil
 import {SideMenuItem} from '../side-menu.component';
 import {NavigationEnd, Router} from '@angular/router';
 import {openClose, rollInOut} from '../../animations/Animations';
+import {MatSidenav} from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-side-menu-item',
@@ -41,6 +42,9 @@ export class SideMenuItemComponent implements OnInit, OnChanges {
 
   expanded = true;
 
+  @Input()
+  sideNav: MatSidenav;
+
   ngOnInit() {
     // this.expanded = this.showOpen;
   }
@@ -51,7 +55,9 @@ export class SideMenuItemComponent implements OnInit, OnChanges {
 
   toggle() {
     if (this.item.baseLink !== undefined) {
-      this.router.navigate(this.item.baseLink);
+      this.navigate(this.item.baseLink);
+      // this.router.navigate(this.item.baseLink);
+      // this.closeOnSmallDevice();
     } else {
       // this.expanded = !this.expanded;
     }
@@ -61,5 +67,13 @@ export class SideMenuItemComponent implements OnInit, OnChanges {
     const regexp = new RegExp(regexValue);
 
     return regexp.test(currentUrl);
+  }
+
+  navigate(url) {
+    if (this.sideNav.mode === 'over') {
+      this.sideNav.close().then(() => this.router.navigate(url));
+    } else {
+      this.router.navigate(url);
+    }
   }
 }

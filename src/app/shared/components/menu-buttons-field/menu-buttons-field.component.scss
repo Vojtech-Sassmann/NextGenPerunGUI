@@ -3,6 +3,10 @@
   grid-gap: 0;
   grid-template-columns: repeat(auto-fill,minmax(220px,1fr));
   margin: 0 -8px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fill,minmax(160px,1fr));
+  }
 }
 .item-itself {
   text-align: center;
@@ -22,4 +26,17 @@
     height: 120px;
     margin-bottom: 10px;
   }
+
+  @media (max-width: 768px) {
+    min-height: 150px;
+    padding: 10px;
+    & img {
+      height: 80px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+
 }

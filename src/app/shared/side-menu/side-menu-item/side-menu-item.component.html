@@ -10,24 +10,20 @@
         </div>
         <div class="ml-3">{{item.label | translate}}</div>
       </a>
-<!--      <a class="p-1" *ngIf="item.links.length > 0 && (item.expandable === undefined || item.expandable)">-->
-<!--        <mat-icon *ngIf="expanded">expand_less</mat-icon>-->
-<!--        <mat-icon *ngIf="!expanded">expand_more</mat-icon>-->
-<!--      </a>-->
     </div>
   </div>
 
   <div [@openClose]="expanded ? 'open' : 'closed'">
     <div class="side-entity-menu {{item.linksClass}}">
       <div *ngFor="let link of item.links">
-        <a [routerLink]="link.url"
+        <a (click)="navigate(link.url)"
            [class.activated]="isActive(currentUrl, link.activatedRegex) && item.activatedClass === undefined"
            [ngClass]="isActive(currentUrl, link.activatedRegex) && item.activatedClass !== undefined ? item.activatedClass : ''">
           {{link.label | translate}}
         </a>
         <div class="entity-menu-item-sub-menu" @rollInOut *ngIf="isActive(currentUrl, link.showChildrenRegex)">
           <a class="pl-5" *ngFor="let child of link?.children"
-             [routerLink]="child.url"
+             (click)="navigate(child.url)"
              [class.activated]="isActive(currentUrl, child.activatedRegex) && item.activatedClass === undefined"
              [ngClass]="isActive(currentUrl, child.activatedRegex) && item.activatedClass !== undefined ? item.activatedClass : ''">
             {{child.label | translate}}
