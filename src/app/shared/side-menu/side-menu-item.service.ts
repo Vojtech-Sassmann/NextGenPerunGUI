@@ -290,18 +290,49 @@ export class SideMenuItemService {
     };
   }
 
-  parseUser(user: User): SideMenuItem {
+  parseUser(user: User, path: string, regex: string): SideMenuItem {
     return {
       label: parseFullName(user),
+      baseLink: [path],
       links: [
         {
           label: 'MENU_ITEMS.USER.OVERVIEW',
-          url: [`/users/${user.id}`],
-          activatedRegex: '^/users/\\d+$'
-        }
+          url: [path],
+          activatedRegex: `${regex}$`
+        },
+        {
+          label: 'MENU_ITEMS.USER.DETAIL',
+          url: [`${path}/detail`],
+          activatedRegex: `${regex}/detail`
+        },
+        {
+          label: 'MENU_ITEMS.USER.ORGANIZATIONS',
+          url: [`${path}/organizations`],
+          activatedRegex: `${regex}/organizations`
+        },
+        {
+          label: 'MENU_ITEMS.USER.GROUPS',
+          url: [`${path}/groups`],
+          activatedRegex: `${regex}/groups`
+        },
+        {
+          label: 'MENU_ITEMS.USER.SETTINGS',
+          url: [`${path}/settings`],
+          activatedRegex: `${regex}/settings$`,
+          children: [
+            {
+              label: 'MENU_ITEMS.MEMBER.ATTRIBUTES',
+              url: [`${path}/settings/attributes`],
+              activatedRegex: `${regex}/settings/attributes`
+            }
+          ],
+          showChildrenRegex: `${regex}/settings`
+        },
       ],
       colorClass: 'user-bg-color',
-      icon: 'user-white.svg'
+      icon: 'user-white.svg',
+      activatedClass: 'user-item-activated',
+      linksClass: 'user-item-links'
     };
   }
 

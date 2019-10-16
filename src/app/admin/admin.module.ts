@@ -18,7 +18,7 @@ import {
   UserDestinationGraphComponent
 } from './pages/admin-page/admin-visualizer/user-destination-relationship/user-destination-graph/user-destination-graph.component';
 import { AdminUsersComponent } from './pages/admin-page/admin-users/admin-users.component';
-import {AdminUserDetailPageComponent} from './pages/admin-user-detail-page/admin-user-detail-page.component';
+import { AdminUserDetailPageComponent } from './pages/admin-user-detail-page/admin-user-detail-page.component';
 
 @NgModule({
   declarations: [

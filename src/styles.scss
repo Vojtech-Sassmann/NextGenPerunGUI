@@ -188,6 +188,17 @@ button:focus {
   //background-color: #eaeaea !important;
 }
 
+.user-item-activated {
+  border-right: 5px solid $user-color;
+  color: $user-color !important;
+  font-weight: 500;
+  background-color: rgba(0, 121, 107, 0.10);
+
+  &:hover {
+    background-color: rgba(0, 121, 107, 0.15) !important;
+  }
+}
+
 .vo-item-links a:hover {
   color: $vo-color !important;
   background-color: rgba(63, 76, 255, 0.15) !important;
@@ -216,6 +227,11 @@ button:focus {
 .member-item-links a:hover {
   color: $member-color !important;
   background-color: rgba(255, 28, 133, 0.15) !important;
+}
+
+.user-item-links a:hover {
+  color: $user-color !important;
+  background-color: rgba(0, 121, 107, 0.15) !important;
 }
 
 .vo-text {

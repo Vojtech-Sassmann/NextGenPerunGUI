@@ -479,7 +479,13 @@
       "USER_DESTINATION": "User-destination relationship"
     },
     "USER": {
-      "OVERVIEW": "Overview"
+      "OVERVIEW": "Overview",
+      "GROUPS": "Groups",
+      "SETTINGS": "Settings",
+      "ORGANIZATIONS": "Organizations",
+      "DETAIL": "Detail",
+      "ATTRIBUTES": "Attributes",
+      "TITLE": "User - "
     }
   },
   "DIALOGS": {

@@ -20,15 +20,20 @@ export class AdminUserDetailPageComponent implements OnInit {
   ) { }
 
   user: User;
+  path: string;
+  regex: string;
 
   ngOnInit() {
     this.route.params.subscribe(params => {
       const userId = params['userId'];
 
+      this.path = `/admin/users/${userId}`;
+      this.regex = `/admin/users/\\d+`;
+
       this.usersService.getUserById(userId).subscribe(user => {
         this.user = user;
 
-        const userItem = this.sideMenuItemService.parseUser(user);
+        const userItem = this.sideMenuItemService.parseUser(user, this.path, this.regex);
         this.sideMenuService.setAdminItems([userItem]);
       });
     });

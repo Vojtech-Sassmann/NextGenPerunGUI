@@ -129,10 +129,19 @@ import { ImmediateFilterComponent } from './components/immediate-filter/immediat
 import {DisplayedRolePipe} from './pipes/displayed-role.pipe';
 import { AnimatedRouterOutletComponent } from './components/animated-router-outlet/animated-router-outlet.component';
 import { UserEmailPipe } from './pipes/user-email.pipe';
-import { UserDetailComponent } from './components/user-detail/user-detail.component';
+import { UserDetailComponent } from './components/user-detail-page/user-detail/user-detail.component';
 import { ResourcesTagsListComponent } from './components/resources-tags-list/resources-tags-list.component';
 import { DebounceFilterComponent } from './components/debounce-filter/debounce-filter.component';
-
+import { UserDetailPageComponent } from './components/user-detail-page/user-detail-page.component';
+import {UserOverviewComponent} from './components/user-detail-page/user-overview/user-overview.component';
+import {UserGroupsComponent} from './components/user-detail-page/user-groups/user-groups.component';
+import {UserSettingsComponent} from './components/user-detail-page/user-settings/user-settings.component';
+import {UserOrganizationsComponent} from './components/user-detail-page/user-organizations/user-organizations.component';
+import {UserAttributesComponent} from './components/user-detail-page/user-settings/user-attributes/user-attributes.component';
+import {
+  UserSettingsOverviewComponent
+} from './components/user-detail-page/user-settings/user-settings-overview/user-settings-overview.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -265,7 +274,10 @@ import { DebounceFilterComponent } from './components/debounce-filter/debounce-f
     ScrollingModule,
     AnimatedRouterOutletComponent,
     ResourcesTagsListComponent,
-    DebounceFilterComponent
+    DebounceFilterComponent,
+    ResourcesTagsListComponent,
+    UserDetailComponent,
+    UserDetailPageComponent
   ],
   entryComponents: [
     CreateGroupDialogComponent,
@@ -385,7 +397,16 @@ import { DebounceFilterComponent } from './components/debounce-filter/debounce-f
     UserEmailPipe,
     UserDetailComponent,
     ResourcesTagsListComponent,
-    DebounceFilterComponent
+    UserDetailPageComponent,
+    UserOverviewComponent,
+    UserGroupsComponent,
+    UserSettingsComponent,
+    UserOrganizationsComponent,
+    UserAttributesComponent,
+    UserSettingsOverviewComponent,
+    ResourcesTagsListComponent,
+    DebounceFilterComponent,
+    UserProfileComponent
   ],
   providers: [
     AnyToStringPipe,

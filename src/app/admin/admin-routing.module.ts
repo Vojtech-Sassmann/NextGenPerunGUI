@@ -16,6 +16,15 @@ import {
 } from './pages/admin-page/admin-visualizer/user-destination-relationship/user-destination-graph/user-destination-graph.component';
 import {AdminUsersComponent} from './pages/admin-page/admin-users/admin-users.component';
 import {AdminUserDetailPageComponent} from './pages/admin-user-detail-page/admin-user-detail-page.component';
+import {UserOverviewComponent} from '../shared/components/user-detail-page/user-overview/user-overview.component';
+import {UserDetailComponent} from '../shared/components/user-detail-page/user-detail/user-detail.component';
+import {UserOrganizationsComponent} from '../shared/components/user-detail-page/user-organizations/user-organizations.component';
+import {UserGroupsComponent} from '../shared/components/user-detail-page/user-groups/user-groups.component';
+import {UserSettingsComponent} from '../shared/components/user-detail-page/user-settings/user-settings.component';
+import {UserAttributesComponent} from '../shared/components/user-detail-page/user-settings/user-attributes/user-attributes.component';
+import {
+  UserSettingsOverviewComponent
+} from '../shared/components/user-detail-page/user-settings/user-settings-overview/user-settings-overview.component';
 
 const routes: Routes = [
   {
@@ -68,7 +77,44 @@ const routes: Routes = [
   {
     path: 'users/:userId',
     component: AdminUserDetailPageComponent,
-    data: {animation: 'AdminUserDetailPage'}
+    children: [
+      {
+        path: '',
+        component: UserOverviewComponent,
+        data: {animation: 'UserOverviewPage'}
+      },
+      {
+        path: 'detail',
+        component: UserDetailComponent,
+        data: {animation: 'UserDetailPage'}
+      },
+      {
+        path: 'organizations',
+        component: UserOrganizationsComponent,
+        data: {animation: 'UserOrganizationsPage'}
+      },
+      {
+        path: 'groups',
+        component: UserGroupsComponent,
+        data: {animation: 'UserGroupsPage'}
+      },
+      {
+        path: 'settings',
+        component: UserSettingsComponent,
+        children: [
+          {
+            path: '',
+            component: UserSettingsOverviewComponent,
+            data: {animation: 'UserSettingsOverviewPage'}
+          },
+          {
+            path: 'attributes',
+            component: UserAttributesComponent,
+            data: {animation: 'UserAttributesPage'}
+          }
+        ]
+      }
+    ]
   },
 ];
 

@@ -36,4 +36,8 @@ export class UsersService {
       searchString: searchString
     }, showNotificationOnError);
   }
+
+  getRichUser(userId: number, showNotificationOnError = true): Observable<RichUser> {
+    return this.apiService.get(`json/usersManager/getRichUser?id=${userId}`, new HttpParams(), showNotificationOnError);
+  }
 }
