@@ -62,7 +62,9 @@ export class AuthService {
   }
 
   getAuthorizationHeaderValue(): string {
-    return 'Bearer ' + this.user.access_token;
+    this.manager.getUser().then(user => {
+      return 'Bearer ' + user.access_token;
+    });
   }
 
   startAuthentication(): Promise<void> {

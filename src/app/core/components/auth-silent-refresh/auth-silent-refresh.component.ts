@@ -14,8 +14,10 @@ export class AuthSilentRefreshComponent implements OnInit {
     this.authService.getUserManager().signinSilentCallback().then( response => {
       console.log(response);
       this.authService.getUserManager().getUser().then( user => {
+        this.authService.userSet.emit(user);
         this.authService.user = user;
-        console.log(user);
+        console.log('what i get: ' + user);
+        console.log('what i have: ' + this.authService.user);
       });
     }).catch((err) => {
         console.log(err);
