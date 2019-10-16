@@ -63,7 +63,7 @@ export class AuthService {
 
   getAuthorizationHeaderValue(): string {
     this.manager.getUser().then(user => {
-      console.log(user);
+      console.log(user.access_token);
       console.log(this.user.access_token);
     });
     return 'Bearer ' + this.user.access_token;
@@ -85,6 +85,12 @@ export class AuthService {
       console.log('signinRedirect done');
     }).catch(function (err) {
       console.log(err);
+    });
+  }
+
+  setUser() {
+    this.manager.getUser().then( user => {
+      this.user = user;
     });
   }
 }
