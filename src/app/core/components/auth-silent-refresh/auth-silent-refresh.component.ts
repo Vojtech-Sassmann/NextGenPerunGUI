@@ -12,12 +12,10 @@ export class AuthSilentRefreshComponent implements OnInit {
 
   ngOnInit() {
     this.authService.getUserManager().signinSilentCallback().then( response => {
-      console.log(response);
       this.authService.getUserManager().getUser().then( user => {
-        this.authService.userSet.emit(user);
-        this.authService.user = user;
-        console.log('what i get: ' + user);
-        console.log('what i have: ' + this.authService.user);
+        this.authService.setUser();
+        console.log('what i get: ' + user.access_token);
+        console.log('what i have: ' + this.authService.user.access_token);
       });
     }).catch((err) => {
         console.log(err);
