@@ -23,7 +23,7 @@ export function getClientSettings(): UserManagerSettings {
   providedIn: 'root'
 })
 export class AuthService {
-  manager: UserManager;
+  manager: UserManager = new UserManager(getClientSettings());
 
   userSet: EventEmitter<User> = new EventEmitter<User>();
 
@@ -33,7 +33,6 @@ export class AuthService {
   redirectUrl: string;
 
   constructor() {
-    this.manager = new UserManager(getClientSettings());
     this.manager.getUser().then(user => {
       this.user = user;
     });
