@@ -33,6 +33,7 @@
               "src/styles.scss"
             ],
             "scripts": [
+              "node_modules/oidc-client/dist/oidc-client.slim.js"
             ]
           },
           "configurations": {
