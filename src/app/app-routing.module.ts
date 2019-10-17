@@ -2,7 +2,6 @@ import {NgModule} from '@angular/core';
 import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 import {MainMenuPageComponent} from './main-menu-page/main-menu-page.component';
 import {AuthCallbackComponent} from './core/components/auth-callback/auth-callback.component';
-import {AuthSilentRefreshComponent} from './core/components/auth-silent-refresh/auth-silent-refresh.component';
 import {UserProfileComponent} from './shared/components/user-profile/user-profile.component';
 import {UserOverviewComponent} from './shared/components/user-detail-page/user-overview/user-overview.component';
 import {UserDetailComponent} from './shared/components/user-detail-page/user-detail/user-detail.component';
@@ -22,10 +21,6 @@ const routes: Routes = [
   {
     path: 'api-callback',
     component: AuthCallbackComponent,
-  },
-  {
-    path: 'silent-refresh',
-    component: AuthSilentRefreshComponent,
   },
   {
     path: 'organizations',
