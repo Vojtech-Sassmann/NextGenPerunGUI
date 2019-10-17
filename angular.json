@@ -25,7 +25,8 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/silent-refresh.html"
+              "src/silent-refresh.html",
+              "src/oidc-client.slim.js"
             ],
             "styles": [
               "./node_modules/bootstrap/dist/css/bootstrap.css",
