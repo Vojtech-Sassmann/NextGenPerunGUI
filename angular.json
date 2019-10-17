@@ -24,13 +24,15 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/silent-refresh.html"
             ],
             "styles": [
               "./node_modules/bootstrap/dist/css/bootstrap.css",
               "src/styles.scss"
             ],
             "scripts": [
+              "node_modules/oidc-client/dist/oidc-client.slim.js"
             ]
           },
           "configurations": {
