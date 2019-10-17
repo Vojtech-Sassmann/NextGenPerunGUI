@@ -36,7 +36,9 @@ export class AuthService {
     this.manager.getUser().then(user => {
       this.user = user;
     });
-
+    this.manager.events.addUserLoaded(user => {
+      this.user = user;
+    });
   }
 
   getUserManager(): UserManager {
@@ -62,10 +64,6 @@ export class AuthService {
   }
 
   getAuthorizationHeaderValue(): string {
-    this.manager.getUser().then(user => {
-      console.log(user.access_token);
-      console.log(this.user.access_token);
-    });
     return 'Bearer ' + this.user.access_token;
   }
 
