@@ -19,12 +19,8 @@
 
 <mat-spinner *ngIf="loading" class="ml-auto mr-auto"></mat-spinner>
 
-<app-resources-tags-list *ngIf="!loading && resourceTag.length !== 0"
+<app-resources-tags-list *ngIf="!loading"
   [selection]="selection"
   [resourceTags]="resourceTag"
   [filterValue]="filterValue"
 ></app-resources-tags-list>
-
-<div *ngIf="!loading && resourceTag.length === 0" class="perun-alert info-alert">
-  {{'VO_DETAIL.RESOURCES.TAGS.NO_TAGS' | translate}}
-</div>

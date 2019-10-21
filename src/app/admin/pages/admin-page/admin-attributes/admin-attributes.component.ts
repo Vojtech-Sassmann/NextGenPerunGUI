@@ -27,10 +27,6 @@ export class AdminAttributesComponent implements OnInit {
     this.refreshTable();
   }
 
-  applyFilter(value: string) {
-    this.filterValue = value.trim().toLowerCase();
-  }
-
   refreshTable() {
     this.loading = true;
     this.attrService.getAttributesDefinition().subscribe(attrDefs => {
@@ -38,4 +34,9 @@ export class AdminAttributesComponent implements OnInit {
       this.loading = false;
     });
   }
+
+  applyFilter(filterValue: string) {
+    this.filterValue = filterValue;
+  }
+
 }

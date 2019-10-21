@@ -1,4 +1,4 @@
-<div class="card mt-3">
+<div class="card mt-3" [hidden]="dataSource.filteredData.length === 0">
   <div class="card-body">
     <table mat-table [dataSource]="dataSource" matSort matSortDirection="asc" matSortDisableClear
            class="w-100">
@@ -34,3 +34,8 @@
     <mat-paginator [length]="this.vos.length" [pageSize]="10" [pageSizeOptions]="[5,10,25]"></mat-paginator>
   </div>
 </div>
+
+<div *ngIf="dataSource.filteredData.length === 0" class="perun-alert warn-alert">
+  {{'SHARED.COMPONENTS.NO_FILTER_RESULTS_ALERT' | translate}}
+</div>
+

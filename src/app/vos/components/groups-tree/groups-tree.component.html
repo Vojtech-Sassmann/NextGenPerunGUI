@@ -1,4 +1,4 @@
-<div class="card mt-2">
+<div class="card mt-2" *ngIf="groups.length !== 0">
   <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
     <mat-tree-node class="group-tree-node"
                    *matTreeNodeDef="let group" matTreeNodePadding>            <!--leaf-->
@@ -55,4 +55,8 @@
       </app-group-menu>
     </mat-tree-node>
   </mat-tree>
+</div>
+
+<div *ngIf="groups.length === 0" class="perun-alert warn-alert">
+  {{'VO_DETAIL.GROUPS.NO_GROUPS' | translate}}
 </div>

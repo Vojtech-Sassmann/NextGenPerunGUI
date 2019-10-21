@@ -21,9 +21,6 @@ export class ApplicationsListComponent implements OnChanges {
   }
 
   @Input()
-  loading = false;
-
-  @Input()
   applications: Application[] = [];
 
   @Input()

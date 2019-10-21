@@ -16,8 +16,8 @@
 </div>
 <mat-spinner *ngIf="loading" class="ml-auto mr-auto"></mat-spinner>
 <app-applications-list
+  *ngIf="!loading"
   [filterValue]="filterValue"
-  [loading]="loading"
   [applications]="applications"
   [displayedColumns]="displayedColumns">
 </app-applications-list>

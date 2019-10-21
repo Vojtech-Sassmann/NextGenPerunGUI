@@ -7,11 +7,9 @@
   <button mat-flat-button color="warn" class="mr-2" [disabled]="selected.selected.length === 0">
     {{'ADMIN.ATTRIBUTES.DELETE' | translate}}
   </button>
-  <mat-form-field>
-    <label>
-      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="{{'ADMIN.ATTRIBUTES.SEARCH' | translate}}">
-    </label>
-  </mat-form-field>
+  <app-immediate-filter
+    [placeholder]="'ADMIN.ATTRIBUTES.SEARCH'"
+    (filter)="applyFilter($event)"></app-immediate-filter>
   <mat-spinner class="ml-auto mr-auto" *ngIf="loading"></mat-spinner>
   <app-attr-def-list
     *ngIf="!loading"

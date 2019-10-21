@@ -1,4 +1,4 @@
-<div class="card mt-2">
+<div class="card mt-2" [hidden]="dataSource.filteredData.length === 0 || groups.length === 0">
   <div class="card-body">
     <table mat-table [dataSource]="dataSource" matSort matSortActive="id" matSortDirection="asc" matSortDisableClear class="w-100">
       <ng-container matColumnDef="select">
@@ -38,4 +38,12 @@
     </table>
     <mat-paginator [length]="this.groups.length" [pageSize]="10" [pageSizeOptions]="[5,10,25]"></mat-paginator>
   </div>
+</div>
+
+<div *ngIf="groups.length === 0" class="perun-alert warn-alert">
+  {{'VO_DETAIL.GROUPS.NO_GROUPS' | translate}}
+</div>
+
+<div *ngIf="dataSource.filteredData.length === 0 && groups.length !== 0" class="perun-alert warn-alert">
+  {{'SHARED.COMPONENTS.NO_FILTER_RESULTS_ALERT' | translate}}
 </div>

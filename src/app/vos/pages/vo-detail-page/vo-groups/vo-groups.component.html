@@ -15,7 +15,7 @@
     {{'VO_DETAIL.GROUPS.LIST_VIEW' | translate}}
   </mat-checkbox>
   <mat-spinner class="ml-auto mr-auto" *ngIf="loading"></mat-spinner>
-  <div class="mt-3" *ngIf="!loading">
+  <div class="mt-3" *ngIf="!loading && groups.length !== 0">
     <app-groups-tree
       (moveGroup)="onMoveGroup($event)"
       *ngIf="!showGroupList"
@@ -29,5 +29,9 @@
       [selection]="selected"
       *ngIf="showGroupList">
     </app-groups-list>
+  </div>
+
+  <div *ngIf="groups.length === 0 && !loading" class="perun-alert warn-alert">
+    {{'VO_DETAIL.GROUPS.NO_GROUPS' | translate}}
   </div>
 </div>

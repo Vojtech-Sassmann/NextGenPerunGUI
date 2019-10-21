@@ -25,15 +25,11 @@
       <mat-spinner *ngIf="loading" class="mr-auto ml-auto"></mat-spinner>
     </div>
     <div class="mt-3" *ngIf="groups !== null && !loading">
-      <div *ngIf="groups.length === 0 && firstSearchDone" class="perun-alert warn-alert">
-        {{'DIALOGS.ADD_GROUPS.NO_GROUPS_FOUND' | translate}}
-      </div>
       <app-groups-list
         [inDialog]="true"
         [hideColumns]="['menu']"
         [selection]="selection"
-        [groups]="groups"
-        *ngIf="groups.length !== 0">
+        [groups]="groups">
       </app-groups-list>
     </div>
 

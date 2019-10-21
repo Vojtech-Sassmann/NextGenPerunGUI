@@ -37,12 +37,9 @@
       [selection]="selectionUsers">
     </app-users-list>
 
-    <div *ngIf="groups && groups.length == 0 && selected === 'group'" class="perun-alert warn-alert">
-      {{'SHARED.COMPONENTS.MANAGERS_PAGE.NO_GROUP_MANAGERS' | translate}}
-    </div>
     <mat-spinner class="ml-auto mr-auto" *ngIf="loading"></mat-spinner>
     <app-groups-list
-      *ngIf="groups  && groups.length > 0 && selected === 'group' && !loading"
+      *ngIf="groups && selected === 'group' && !loading"
       [hideColumns]="['menu']"
       [groups]="groups"
       [selection]="selectionGroups">

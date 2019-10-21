@@ -12,10 +12,14 @@
   </mat-form-field>
   <mat-spinner class="ml-auto mr-auto" *ngIf="loading"></mat-spinner>
   <app-groups-list
-    *ngIf="!loading"
+    *ngIf="!loading && groupsToShow.length !== 0"
     [hideColumns]="['menu']"
     [groups] = "groupsToShow">
   </app-groups-list>
+
+  <div *ngIf="groupsToShow.length === 0 && !loading" class="perun-alert warn-alert">
+    {{'FACILITY_DETAIL.ALLOWED_GROUPS.NO_GROUPS_ALERT' | translate}}
+  </div>
 
 </div>
 

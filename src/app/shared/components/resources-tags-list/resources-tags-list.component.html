@@ -1,4 +1,4 @@
-<div class="card mt-2">
+<div class="card mt-2" [hidden]="resourceTags.length === 0 || dataSource.filteredData.length === 0">
   <div class="card-body">
     <table mat-table [dataSource]="dataSource" matSort matSortActive="id" matSortDirection="asc" matSortDisableClear
            class="w-100">
@@ -74,4 +74,12 @@
     </table>
     <mat-paginator [length]="this.resourceTags.length" [pageSize]="10" [pageSizeOptions]="[5,10,25]"></mat-paginator>
   </div>
+</div>
+
+<div *ngIf="resourceTags.length === 0" class="perun-alert info-alert">
+  {{'VO_DETAIL.RESOURCES.TAGS.NO_TAGS' | translate}}
+</div>
+
+<div *ngIf="dataSource.filteredData.length === 0 && resourceTags.length !== 0" class="perun-alert warn-alert">
+  {{'SHARED.COMPONENTS.NO_FILTER_RESULTS_ALERT' | translate}}
 </div>

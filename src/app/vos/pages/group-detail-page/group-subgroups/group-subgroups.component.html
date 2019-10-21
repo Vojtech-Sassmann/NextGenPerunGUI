@@ -15,7 +15,7 @@
     {{'GROUP_DETAIL.SUBGROUPS.SHOW_LIST' | translate}}
   </mat-checkbox>
   <mat-spinner class="ml-auto mr-auto" *ngIf="loading"></mat-spinner>
-  <div class="mt-3" *ngIf="groups.length > 0 && !loading">
+  <div class="mt-3" *ngIf="!loading">
     <app-groups-tree
       *ngIf="!showGroupList"
       [groups]="filteredTreeGroups"
@@ -27,8 +27,5 @@
       [selection]="selected"
       *ngIf="showGroupList">
     </app-groups-list>
-  </div>
-  <div *ngIf="groups.length == 0 && !loading" class="perun-alert warn-alert">
-    {{'GROUP_DETAIL.SUBGROUPS.NO_SUBGROUPS' | translate}}
   </div>
 </div>

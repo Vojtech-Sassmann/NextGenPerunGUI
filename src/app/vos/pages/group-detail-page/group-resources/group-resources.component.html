@@ -6,12 +6,9 @@
   </button>
   <app-immediate-filter [placeholder]="'SHARED.COMPONENTS.RESOURCES_LIST.TABLE_SEARCH'" (filter)="applyFilter($event)"></app-immediate-filter>
   <mat-spinner class="ml-auto mr-auto" *ngIf="loading"></mat-spinner>
-  <app-resources-list *ngIf="resources && resources.length > 0 && !loading"
+  <app-resources-list *ngIf="resources && !loading"
     [filterValue]="filterValue"
     [resources]="resources"
     [selection]="selected">
   </app-resources-list>
-  <div *ngIf="resources !== null && resources.length === 0" class="perun-alert warn-alert">
-    {{'GROUP_DETAIL.RESOURCES.NO_RESOURCES_WARNING' | translate}}
-  </div>
 </div>
