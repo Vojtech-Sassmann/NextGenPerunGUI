@@ -1,0 +1,130 @@
+<h1 mat-dialog-title>{{'DIALOGS.CREATE_ATTRIBUTE_DEFINITION.TITLE' | translate}}</h1>
+<div mat-dialog-content>
+  <mat-form-field class="form-field-width">
+    <label>
+      <input class="form-field-width" matInput [(ngModel)]="attDef.friendlyName"
+             placeholder="{{'DIALOGS.CREATE_ATTRIBUTE_DEFINITION.FRIENDLY_NAME' | translate}}" required>
+    </label>
+    <mat-error
+      *ngIf="attDef.friendlyName === ''">{{'DIALOGS.CREATE_ATTRIBUTE_DEFINITION.ERROR_FIELD_EMPTY' | translate}}</mat-error>
+  </mat-form-field>
+  <br>
+  <mat-form-field class="form-field-width">
+    <label>
+      <input class="form-field-width" matInput [(ngModel)]="attDef.displayName"
+             placeholder="{{'DIALOGS.CREATE_ATTRIBUTE_DEFINITION.DISPLAY_NAME' | translate}}" required>
+    </label>
+    <mat-error
+      *ngIf="attDef.displayName === ''">{{'DIALOGS.CREATE_ATTRIBUTE_DEFINITION.ERROR_FIELD_EMPTY' | translate}}</mat-error>
+  </mat-form-field>
+  <br>
+  <mat-form-field class="form-field-width">
+    <label>
+      <input class="form-field-width" matInput [(ngModel)]="attDef.description"
+             placeholder="{{'DIALOGS.CREATE_ATTRIBUTE_DEFINITION.DESCRIPTION' | translate}}" required>
+    </label>
+    <mat-error
+      *ngIf="attDef.description === ''">{{'DIALOGS.CREATE_ATTRIBUTE_DEFINITION.ERROR_FIELD_EMPTY' | translate}}</mat-error>
+  </mat-form-field>
+  <br>
+  <mat-form-field class="form-field-width">
+    <mat-placeholder>{{'DIALOGS.CREATE_ATTRIBUTE_DEFINITION.ENTITY' | translate}}</mat-placeholder>
+    <mat-select [(ngModel)]="attDef.entity" required>
+      <mat-option *ngFor="let entity of entities" [value]="entity">{{entity}}</mat-option>
+    </mat-select>
+    <mat-error
+      *ngIf="attDef.entity === ''">{{'DIALOGS.CREATE_ATTRIBUTE_DEFINITION.ERROR_SELECT_SOMETHING' | translate}}</mat-error>
+  </mat-form-field>
+  <br>
+  <mat-form-field class="form-field-width">
+    <mat-placeholder>{{'DIALOGS.CREATE_ATTRIBUTE_DEFINITION.DEFINITION' | translate}}</mat-placeholder>
+    <mat-select [(ngModel)]="definitionType" required>
+      <mat-option *ngFor="let defType of definitionTypes" [value]="defType">{{defType}}</mat-option>
+    </mat-select>
+    <mat-error
+      *ngIf="definitionType === ''">{{'DIALOGS.CREATE_ATTRIBUTE_DEFINITION.ERROR_SELECT_SOMETHING' | translate}}</mat-error>
+  </mat-form-field>
+  <br>
+  <mat-form-field class="form-field-width">
+    <mat-placeholder>{{'DIALOGS.CREATE_ATTRIBUTE_DEFINITION.VALUE_TYPE' | translate}}</mat-placeholder>
+    <mat-select [(ngModel)]="valueType" required>
+      <mat-option *ngFor="let valueType of valueTypes" [value]="valueType">{{valueType}}</mat-option>
+    </mat-select>
+    <mat-error
+      *ngIf="valueType === ''">{{'DIALOGS.CREATE_ATTRIBUTE_DEFINITION.ERROR_SELECT_SOMETHING' | translate}}</mat-error>
+  </mat-form-field>
+  <br>
+  <div class="d-flex flex-row mt-3">
+    <p>{{'DIALOGS.CREATE_ATTRIBUTE_DEFINITION.UNIQUE' | translate}}</p>
+    <p class="pointer ml-4" (click)="attDef.unique = false">OFF</p>
+    <mat-slide-toggle class="ml-2" color="accent"
+                      matTooltip="{{'DIALOGS.CREATE_ATTRIBUTE_DEFINITION.TOOLTIP_UNIQUE'| translate}}"
+                      matTooltipPosition="above"
+                      [matTooltipDisabled]="!disableUniqueToggle()"
+                      [disabled]="disableUniqueToggle()"
+                      [(ngModel)]="attDef.unique">
+      ON
+    </mat-slide-toggle>
+  </div>
+
+  <div class="d-flex flex-row justify-content-between mt-2">
+    <p class="ml-5 pl-4">{{'DIALOGS.CREATE_ATTRIBUTE_DEFINITION.SELF' | translate}}</p>
+    <p class="">{{'DIALOGS.CREATE_ATTRIBUTE_DEFINITION.SELF_PUBLIC' | translate}}</p>
+    <p class="">{{'DIALOGS.CREATE_ATTRIBUTE_DEFINITION.SELF_VO' | translate}}</p>
+    <p class="">{{'DIALOGS.CREATE_ATTRIBUTE_DEFINITION.VO' | translate}}</p>
+    <p class="">{{'DIALOGS.CREATE_ATTRIBUTE_DEFINITION.GROUP' | translate}}</p>
+    <p class="">{{'DIALOGS.CREATE_ATTRIBUTE_DEFINITION.FACILITY' | translate}}</p>
+  </div>
+
+  <div class="d-flex flex-row justify-content-between">
+    <p>{{'DIALOGS.CREATE_ATTRIBUTE_DEFINITION.READ' | translate}}</p>
+    <mat-checkbox [(ngModel)]="readSelf">
+    </mat-checkbox>
+    <mat-checkbox [(ngModel)]="readSelfPublic">
+    </mat-checkbox>
+    <mat-checkbox [(ngModel)]="readSelfVo">
+    </mat-checkbox>
+    <mat-checkbox [(ngModel)]="readVo">
+    </mat-checkbox>
+    <mat-checkbox [(ngModel)]="readGroup">
+    </mat-checkbox>
+    <mat-checkbox [(ngModel)]="readFacility">
+    </mat-checkbox>
+  </div>
+
+  <div class="d-flex flex-row justify-content-between">
+    <p>{{'DIALOGS.CREATE_ATTRIBUTE_DEFINITION.WRITE' | translate}}</p>
+    <mat-checkbox [(ngModel)]="writeSelf">
+    </mat-checkbox>
+    <mat-checkbox [(ngModel)]="writeSelfPublic">
+    </mat-checkbox>
+    <mat-checkbox [(ngModel)]="writeSelfVo">
+    </mat-checkbox>
+    <mat-checkbox [(ngModel)]="writeVo">
+    </mat-checkbox>
+    <mat-checkbox [(ngModel)]="writeGroup">
+    </mat-checkbox>
+    <mat-checkbox [(ngModel)]="writeFacility">
+    </mat-checkbox>
+  </div>
+
+</div>
+<div mat-dialog-actions class="mt-3">
+  <button
+    mat-stroked-button
+    class="ml-auto"
+    (click)="onCancel()">
+    {{'DIALOGS.CREATE_ATTRIBUTE_DEFINITION.CANCEL' | translate}}
+  </button>
+  <button
+    mat-flat-button
+    class="ml-2"
+    color="accent"
+    (click)="onSubmit()"
+    [disabled]="disableConfirmButton()"
+    matTooltip="{{'DIALOGS.CREATE_ATTRIBUTE_DEFINITION.TOOLTIP_CONFIRM' | translate}}"
+    matTooltipPosition="above"
+    [matTooltipDisabled]="!disableConfirmButton()">
+    {{'DIALOGS.CREATE_ATTRIBUTE_DEFINITION.CONFIRM' | translate}}
+  </button>
+</div>

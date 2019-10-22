@@ -840,6 +840,41 @@
       "ERROR_NO_VO": "Please choose Vo",
       "ERROR_INVALID_GROUP": "Please choose Group from options",
       "ERROR_NO_GROUP": "Please choose Group"
+    },
+    "CREATE_ATTRIBUTE_DEFINITION": {
+      "TITLE":"Create Attribute Definition",
+      "FRIENDLY_NAME": "Friendly name",
+      "DISPLAY_NAME": "Display name",
+      "DESCRIPTION": "Description",
+      "ENTITY": "Entity",
+      "DEFINITION": "Definition",
+      "VALUE_TYPE": "Value Type",
+      "UNIQUE": "Unique",
+      "READ": "Read",
+      "WRITE": "Write",
+      "SELF": "Self",
+      "SELF_PUBLIC": "Self Public",
+      "SELF_VO": "Self Vo",
+      "VO": "Vo",
+      "GROUP": "Group",
+      "FACILITY": "Facility",
+      "CANCEL": "Cancel",
+      "CONFIRM": "Create",
+      "SUCCESS": "Attribute Definition successfully created",
+      "ERROR_FIELD_EMPTY": "This field can't be empty",
+      "ERROR_SELECT_SOMETHING": "You have to select something",
+      "ERROR_FILL_REQUIRED": "Fill all required fields",
+      "TOOLTIP_UNIQUE": "Entityless Attributes or Attributes with definitions 'virt' CAN'T be UNIQUE",
+      "TOOLTIP_CONFIRM": "Fill every required field"
+    },
+    "DELETE_ATTRIBUTE_DEFINITION": {
+      "TITLE": "Confirm delete action",
+      "TEXT_LINE1": "Following attribute definitions will be removed.",
+      "TEXT_LINE2": "Do you want to proceed?",
+      "CANCEL": "Cancel",
+      "CONFIRM": "Delete",
+      "WARNING": "This action will also delete all assigned values",
+      "SUCCESS": "Selected attributes has been deleted successfully"
     }
   },
   "MEMBERS_LIST": {

@@ -142,6 +142,11 @@ import {
   UserSettingsOverviewComponent
 } from './components/user-detail-page/user-settings/user-settings-overview/user-settings-overview.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+// tslint:disable-next-line:max-line-length
+import { DeleteAttributeDefinitionDialogComponent } from './components/dialogs/delete-attribute-definition-dialog/delete-attribute-definition-dialog.component';
+// tslint:disable-next-line:max-line-length
+import { CreateAttributeDefinitionDialogComponent } from './components/dialogs/create-attribute-definition-dialog/create-attribute-definition-dialog.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -406,7 +411,12 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
     UserSettingsOverviewComponent,
     ResourcesTagsListComponent,
     DebounceFilterComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    DebounceFilterComponent,
+    ResourcesTagsListComponent,
+    UserDetailComponent,
+    DeleteAttributeDefinitionDialogComponent,
+    CreateAttributeDefinitionDialogComponent
   ],
   providers: [
     AnyToStringPipe,

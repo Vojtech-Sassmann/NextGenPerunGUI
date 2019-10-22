@@ -4,6 +4,7 @@ import {RichUser} from '../core/models/RichUser';
 import {Attribute} from '../core/models/Attribute';
 import {Owner} from '../core/models/Owner';
 import {Group} from '../core/models/Group';
+import {AttributeDefinition} from '../core/models/AttributeDefinition';
 
 
 /**
@@ -322,4 +323,8 @@ export function findParent(group: number, groups: Group[]): Group[] {
   } else {
     return [];
   }
+}
+
+export function filterCoreAttributesDefinitions(attributesDef: AttributeDefinition[]): AttributeDefinition[] {
+  return attributesDef.filter(attribute => !attribute.namespace.includes('def:core'));
 }

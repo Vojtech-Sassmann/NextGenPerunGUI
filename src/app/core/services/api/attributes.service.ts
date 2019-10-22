@@ -5,6 +5,7 @@ import {Attribute} from '../../models/Attribute';
 import {AttributeDefinition} from '../../models/AttributeDefinition';
 import {Graph} from '../../models/Graph';
 import {HttpParams} from '@angular/common/http';
+import {AttributeRights} from '../../models/AttributeRights';
 
 export type Entity = 'vo' | 'group' | 'user' | 'member' | 'facility' | 'resource';
 
@@ -72,6 +73,27 @@ export class AttributesService {
     payload['attrNames'] = attributes;
 
     return this.apiService.post('json/attributesManager/getAttributes', payload, showNotificationOnError);
+  }
+
+  deleteAttributeDefinitions(attributeDefIds: number[], showNotificationOnError = true) {
+    const payload = {};
+    payload['attributes'] = attributeDefIds;
+
+    return this.apiService.post('json/attributesManager/deleteAttributes', payload, showNotificationOnError);
+  }
+
+  createAttributeDefinition(attrDef: AttributeDefinition, showNotificationOnError = true): Observable<AttributeDefinition> {
+    const payload = {};
+    payload['attribute'] = attrDef;
+
+    return this.apiService.post('json/attributesManager/createAttribute', payload, showNotificationOnError);
+  }
+
+  setAttributesRights(rights: AttributeRights[], showNotificationOnError = true) {
+    const payload = {};
+    payload['rights'] = rights;
+
+    return this.apiService.post('json/attributesManager/setAttributeRights', payload, showNotificationOnError);
   }
 }
 

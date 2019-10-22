@@ -19,6 +19,10 @@ import {
 } from './pages/admin-page/admin-visualizer/user-destination-relationship/user-destination-graph/user-destination-graph.component';
 import { AdminUsersComponent } from './pages/admin-page/admin-users/admin-users.component';
 import { AdminUserDetailPageComponent } from './pages/admin-user-detail-page/admin-user-detail-page.component';
+// tslint:disable-next-line:max-line-length
+import {CreateAttributeDefinitionDialogComponent} from '../shared/components/dialogs/create-attribute-definition-dialog/create-attribute-definition-dialog.component';
+// tslint:disable-next-line:max-line-length
+import {DeleteAttributeDefinitionDialogComponent} from '../shared/components/dialogs/delete-attribute-definition-dialog/delete-attribute-definition-dialog.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +42,10 @@ import { AdminUserDetailPageComponent } from './pages/admin-user-detail-page/adm
     CommonModule,
     AdminRoutingModule,
     SharedModule
+  ],
+  entryComponents: [
+    CreateAttributeDefinitionDialogComponent,
+    DeleteAttributeDefinitionDialogComponent
   ]
 })
 export class AdminModule { }

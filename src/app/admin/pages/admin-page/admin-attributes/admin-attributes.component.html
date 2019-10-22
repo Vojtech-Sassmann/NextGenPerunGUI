@@ -1,10 +1,10 @@
 <div>
   <h1 class="page-subtitle">{{'ADMIN.ATTRIBUTES.TITLE' | translate}}</h1>
   <app-refresh-button (refresh)="refreshTable()"></app-refresh-button>
-  <button mat-flat-button color="accent" class="mr-2">
+  <button mat-flat-button (click)="onCreate()" color="accent" class="mr-2">
     {{'ADMIN.ATTRIBUTES.CREATE' | translate}}
   </button>
-  <button mat-flat-button color="warn" class="mr-2" [disabled]="selected.selected.length === 0">
+  <button mat-flat-button color="warn" (click)="onDelete()" class="mr-2" [disabled]="selected.selected.length === 0">
     {{'ADMIN.ATTRIBUTES.DELETE' | translate}}
   </button>
   <app-immediate-filter
