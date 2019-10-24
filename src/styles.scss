@@ -251,7 +251,6 @@ button:focus {
 }
 
 .router-component {
-  position: absolute;
   padding-bottom: 5rem;
   width: calc(100vw - (300px + 6rem));
   @media(min-width: 769px) and (max-width: 1199px) {
@@ -371,7 +370,6 @@ button:focus {
 }
 
 .page-subtitle {
-  margin-top: 0.75rem;
   margin-bottom: 1.5rem;
   font-size: 1.25rem;
 }
@@ -898,4 +896,3 @@ button:focus {
 .static-column-size {
   width: 80px;
 }
-

@@ -36,28 +36,47 @@ export const rollInOut = trigger('rollInOut', [
 
 export const fadeIn =
   trigger('routeAnimations', [
-
     transition( '* => *', [
-
+      style({ position: 'relative' }),
       query(':enter',
         [
-          style({ opacity: 0 })
+          style({
+            position: 'absolute',
+            width: '100%',
+            opacity: 0
+          })
         ],
         { optional: true }
       ),
 
       query(':leave',
         [
-          style({ opacity: 1 }),
-          animate('0.15s', style({ opacity: 0 }))
+          style({
+            position: 'absolute',
+            width: '100%',
+            opacity: 1
+          }),
+          animate('0.35s', style({
+            position: 'absolute',
+            width: '100%',
+            opacity: 0
+          }))
         ],
         { optional: true }
       ),
 
       query(':enter',
         [
-          style({ opacity: 0 }),
-          animate('0.15s', style({ opacity: 1 }))
+          style({
+            position: 'absolute',
+            width: '100%',
+            opacity: 0
+          }),
+          animate('0.35s', style({
+            position: 'absolute',
+            width: '100%',
+            opacity: 1
+          }))
         ],
         { optional: true }
       )

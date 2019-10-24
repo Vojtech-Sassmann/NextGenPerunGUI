@@ -146,6 +146,7 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { DeleteAttributeDefinitionDialogComponent } from './components/dialogs/delete-attribute-definition-dialog/delete-attribute-definition-dialog.component';
 // tslint:disable-next-line:max-line-length
 import { CreateAttributeDefinitionDialogComponent } from './components/dialogs/create-attribute-definition-dialog/create-attribute-definition-dialog.component';
+import { PerunFooterComponent } from './perun-footer/perun-footer.component';
 
 @NgModule({
   imports: [
@@ -282,7 +283,8 @@ import { CreateAttributeDefinitionDialogComponent } from './components/dialogs/c
     DebounceFilterComponent,
     ResourcesTagsListComponent,
     UserDetailComponent,
-    UserDetailPageComponent
+    UserDetailPageComponent,
+    PerunFooterComponent
   ],
   entryComponents: [
     CreateGroupDialogComponent,
@@ -416,7 +418,8 @@ import { CreateAttributeDefinitionDialogComponent } from './components/dialogs/c
     ResourcesTagsListComponent,
     UserDetailComponent,
     DeleteAttributeDefinitionDialogComponent,
-    CreateAttributeDefinitionDialogComponent
+    CreateAttributeDefinitionDialogComponent,
+    PerunFooterComponent
   ],
   providers: [
     AnyToStringPipe,

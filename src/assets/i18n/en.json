@@ -1023,6 +1023,17 @@
         "NO_MANAGERS": "This role has no managers.",
         "NO_GROUP_MANAGERS": "This role has no group managers."
       }
+    },
+    "FOOTER": {
+      "ABOUT_PERUN": "About",
+      "HELP": "Help",
+      "PERUN_WEB": "Perun website",
+      "PERUN_TEAM": "Perun team",
+      "SUPPORT": "Support",
+      "USER_DOCUMENTATION": "Users Documentation",
+      "ADMINISTRATOR_DOCUMENTATION": "Administrators Documentation",
+      "REPORT_ISSUE": "Report Issue",
+      "PRIVACY_POLICY": "Privacy Policy"
     }
   },
   "ROLES": {
