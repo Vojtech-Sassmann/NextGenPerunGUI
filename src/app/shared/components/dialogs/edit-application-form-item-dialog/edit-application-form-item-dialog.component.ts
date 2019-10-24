@@ -5,10 +5,11 @@ import {RegistrarService} from '../../../../core/services/api/registrar.service'
 import {AttributesService} from '../../../../core/services/api/attributes.service';
 import {AttributeDefinition} from '../../../../core/models/AttributeDefinition';
 import {TranslateService} from '@ngx-translate/core';
+import {Group} from '../../../../core/models/Group';
 
 export interface EditApplicationFormItemDialogComponentData {
   voId: number;
-  groupId: number;
+  group: Group;
   applicationFormItem: ApplicationFormItem;
   applicationFormItems: ApplicationFormItem[];
 }
@@ -75,8 +76,8 @@ export class EditApplicationFormItemDialogComponent implements OnInit {
         break;
       }
     }
-    if (this.data.groupId) {      // if the dialog is for group
-      this.registrarService.updateFormItemsForGroup(this.data.groupId, this.data.applicationFormItems).subscribe( () => {
+    if (this.data.group) {      // if the dialog is for group
+      this.registrarService.updateFormItemsForGroup(this.data.group.id, this.data.applicationFormItems).subscribe( () => {
         this.dialogRef.close(true);
       });
     } else {
@@ -118,7 +119,7 @@ export class EditApplicationFormItemDialogComponent implements OnInit {
           new SelectionItem(attribute.friendlyName + ' (' + attribute.entity + ' / ' + this.getDefinition(attribute) + ')',
             attribute.namespace + ':' + attribute.friendlyName)
         );
-      } else if (attribute.entity.toLowerCase() === 'group' && this.data.groupId) {
+      } else if (attribute.entity.toLowerCase() === 'group' && this.data.group) {
         // if dialog is for group
         this.sourceAttributes.push(
           new SelectionItem(attribute.friendlyName + ' (' + attribute.entity + ' / ' + this.getDefinition(attribute) + ')',

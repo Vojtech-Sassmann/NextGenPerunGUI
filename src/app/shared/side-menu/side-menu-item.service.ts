@@ -427,6 +427,11 @@ export class SideMenuItemService {
             label: 'MENU_ITEMS.VO.APPLICATION_FORM',
             url: [`/organizations/${vo.id}/settings/applicationForm`],
             activatedRegex: '/organizations/\\d+/settings/applicationForm$'
+          },
+          {
+            label: 'MENU_ITEMS.VO.NOTIFICATIONS',
+            url: [`/organizations/${vo.id}/settings/notifications`],
+            activatedRegex: '/organizations/\\d+/settings/notifications$'
           }
         ],
         showChildrenRegex: '/organizations/\\d+/settings'

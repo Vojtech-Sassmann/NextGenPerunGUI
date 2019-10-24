@@ -55,7 +55,7 @@ export class ApplicationFormListComponent implements OnChanges {
       width: '600px',
       height: '600px',
       data: {voId: this.applicationForm.vo.id,
-        groupId: this.applicationForm.group.id,
+        group: this.applicationForm.group,
         applicationFormItem: applicationFormItem,
         applicationFormItems: this.applicationFormItems}
     });

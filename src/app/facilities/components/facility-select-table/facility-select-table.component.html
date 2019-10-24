@@ -10,11 +10,12 @@
       <ng-container matColumnDef="recent">
         <th mat-header-cell *matHeaderCellDef>
         </th>
-        <td mat-cell *matCellDef="let vo">
+        <td mat-cell *matCellDef="let facility">
           <mat-icon
-            *ngIf="recentIds.indexOf(vo.id) > -1"
+            class="align-bottom"
+            *ngIf="recentIds.indexOf(facility.id) > -1"
             matTooltip="{{'VO_MANAGEMENT.TABLE.RECENT' | translate}}">
-            cached
+            visibility
           </mat-icon>
         </td>
       </ng-container>
