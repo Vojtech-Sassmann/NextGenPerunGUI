@@ -23,7 +23,8 @@ export class NotificationComponent {
     } else {
       this.dialog.open(NotificationDialogComponent, {
         width: '550px',
-        data: this.data
+        data: this.data,
+        autoFocus: false
       });
     }
   }

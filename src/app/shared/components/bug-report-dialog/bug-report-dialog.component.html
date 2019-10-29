@@ -1,0 +1,37 @@
+<h1 mat-dialog-title>{{'DIALOGS.BUG_REPORT.TITLE' | translate}}</h1>
+<div mat-dialog-content class="dialog-container">
+  <mat-form-field>
+    <mat-label>{{'DIALOGS.BUG_REPORT.SUBJECT' | translate}}</mat-label>
+    <input matInput required [(ngModel)]="subject" #subjectModel=ngModel>
+    <mat-error *ngIf="subjectModel.invalid">{{'DIALOGS.BUG_REPORT.SUBJECT_ERROR' | translate}}</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>{{'DIALOGS.BUG_REPORT.MESSAGE' | translate}}</mat-label>
+    <textarea
+      #messageModel=ngModel
+      appAutoFocus
+      matInput
+      required
+      minlength="60"
+      placeholder="{{'DIALOGS.BUG_REPORT.MESSAGE_PLACEHOLDER' | translate}}"
+      [(ngModel)]="message">
+    </textarea>
+    <mat-error *ngIf="messageModel.invalid">{{'DIALOGS.BUG_REPORT.MESSAGE_ERROR' | translate}}</mat-error>
+  </mat-form-field>
+</div>
+
+<div mat-dialog-actions>
+  <div class="ml-auto">
+    <button mat-button (click)="dialogRef.close()">
+      {{'DIALOGS.BUG_REPORT.CANCEL' | translate}}
+    </button>
+    <button
+      (click)="sendBugReport()"
+      [disabled]="messageModel.invalid || subjectModel.invalid"
+      class="ml-2"
+      mat-flat-button
+      color="accent">
+      {{'DIALOGS.BUG_REPORT.SEND' | translate}}
+    </button>
+  </div>
+</div>

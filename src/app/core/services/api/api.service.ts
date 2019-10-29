@@ -5,7 +5,7 @@ import {environment} from '../../../../environments/environment';
 import {catchError} from 'rxjs/operators';
 import {NotificatorService} from '../common/notificator.service';
 import {AuthService} from '../common/auth.service';
-import {debug} from 'util';
+import {RPCError} from '../../models/RPCError';
 
 @Injectable({
   providedIn: 'root'
@@ -18,11 +18,14 @@ export class ApiService {
     private authService: AuthService
   ) { }
 
-  private formatErrors(error: any, showError) {
+  private formatErrors(error: any, url: string, payload: any, showError) {
+    const rpcError = error.error as RPCError;
+    rpcError.call = url;
+    rpcError.payload = payload;
     if (showError) {
       this.notificator.showRPCError(error.error);
     }
-    return throwError(error.error);
+    return throwError(rpcError);
   }
 
   getHeaders(): HttpHeaders {
@@ -32,32 +35,37 @@ export class ApiService {
   }
 
   get(path: string, params: HttpParams = new HttpParams(), showError = true): Observable<any> {
-    return this.http.get(`${environment.api_url}${path}`, { headers: this.getHeaders() })
-      .pipe(catchError(err => this.formatErrors(err, showError)));
+    const url = `${environment.api_url}${path}`;
+    return this.http.get(url, { headers: this.getHeaders() })
+      .pipe(catchError(err => this.formatErrors(err, url, null, showError)));
   }
 
   put(path: string, body: Object = {}, showError = true): Observable<any> {
+    const url = `${environment.api_url}${path}`;
+    const payload = JSON.stringify(body);
     return this.http.put(
-      `${environment.api_url}${path}`,
-      JSON.stringify(body), { headers: this.getHeaders() }
-    ).pipe(catchError(err => this.formatErrors(err, showError)));
+      url,
+      payload, { headers: this.getHeaders() }
+    ).pipe(catchError(err => this.formatErrors(err, url, payload, showError)));
   }
 
   post(path: string, body: Object = {}, showError = true): Observable<any> {
+    const url = `${environment.api_url}${path}`;
+    const payload = JSON.stringify(body);
     let headers = this.getHeaders();
     headers = headers.set('Content-Type', 'application/json; charset=utf-8');
-
     return this.http.post(
-      `${environment.api_url}${path}`,
-      JSON.stringify(body),
+      url,
+      payload,
       {headers: headers}
-    ).pipe(catchError(err => this.formatErrors(err, showError)));
+    ).pipe(catchError(err => this.formatErrors(err, url, payload, showError)));
   }
 
   delete(path, showError = true): Observable<any> {
+    const url = `${environment.api_url}${path}`;
     return this.http.delete(
-      `${environment.api_url}${path}`,
+      url,
       { headers: this.getHeaders() }
-    ).pipe(catchError(err => this.formatErrors(err, showError)));
+    ).pipe(catchError(err => this.formatErrors(err, url, null, showError)));
   }
 }

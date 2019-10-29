@@ -147,6 +147,8 @@ import { DeleteAttributeDefinitionDialogComponent } from './components/dialogs/d
 // tslint:disable-next-line:max-line-length
 import { CreateAttributeDefinitionDialogComponent } from './components/dialogs/create-attribute-definition-dialog/create-attribute-definition-dialog.component';
 import { PerunFooterComponent } from './perun-footer/perun-footer.component';
+import { BugReportDialogComponent } from './components/bug-report-dialog/bug-report-dialog.component';
+import { AutoFocusDirective } from './directives/auto-focus.directive';
 
 @NgModule({
   imports: [
@@ -318,7 +320,8 @@ import { PerunFooterComponent } from './perun-footer/perun-footer.component';
     DeleteNotificationDialogComponent,
     EditEmailFooterDialogComponent,
     AddEditNotificationDialogComponent,
-    NotificationsCopyMailsDialogComponent
+    NotificationsCopyMailsDialogComponent,
+    BugReportDialogComponent
   ],
   declarations: [
     AttributesListComponent,
@@ -419,7 +422,9 @@ import { PerunFooterComponent } from './perun-footer/perun-footer.component';
     UserDetailComponent,
     DeleteAttributeDefinitionDialogComponent,
     CreateAttributeDefinitionDialogComponent,
-    PerunFooterComponent
+    PerunFooterComponent,
+    BugReportDialogComponent,
+    AutoFocusDirective
   ],
   providers: [
     AnyToStringPipe,

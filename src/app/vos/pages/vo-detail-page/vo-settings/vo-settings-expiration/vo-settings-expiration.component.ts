@@ -55,7 +55,9 @@ export class VoSettingsExpirationComponent implements OnInit {
     this.attributesService.setAttribute(this.voId, 'vo', attribute, false).subscribe(() => {
         this.loadSettings();
         this.notificator.showSuccess(this.successMessage);
-      },
-      error => this.notificator.showRPCError(error, this.errorMessage));
+      }, error => {
+      console.log(error);
+      this.notificator.showRPCError(error, this.errorMessage);
+    });
   }
 }

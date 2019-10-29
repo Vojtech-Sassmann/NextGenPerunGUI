@@ -31,20 +31,22 @@ export class NotificatorService {
    * @param errorMessage - custom message that will be displayed
    */
   showRPCError(rpcError: RPCError, errorMessage = this.defaultRpcMessage): void {
-    this.showError(errorMessage + '\n' + rpcError.name, rpcError.message);
+    this.showError(errorMessage + '\n' + rpcError.name, rpcError, rpcError.message);
   }
 
   /**
    * Shows error notification
    *
    * @param title - text that is shown on the notification
+   * @param error - RPC error
    * @param description - text shown in the body of dialog which is displayed after clicking the action
    * @param actionText - clickable text shown on the notification which starts specified or default action
    * @param action - action which will be executed after clicking the actionText
    */
-  showError(title: string, description?: string, actionText?: string, action?: () => void): void {
+  showError(title: string, error?: RPCError, description?: string, actionText?: string, action?: () => void): void {
     this.addNotification.emit({
       type: 'error',
+      error: error,
       description: description,
       title: title,
       actionText: actionText === undefined && description !== undefined ? this.defaultAction : actionText ,

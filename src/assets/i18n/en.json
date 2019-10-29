@@ -493,6 +493,18 @@
     }
   },
   "DIALOGS": {
+    "BUG_REPORT": {
+      "TITLE": "Report a bug",
+      "SUBJECT": "Subject",
+      "SUBJECT_VALUE": "Reported error: ",
+      "SUBJECT_ERROR": "Subject cannot be empty.",
+      "MESSAGE": "Message",
+      "MESSAGE_PLACEHOLDER": "You can describe what you did that caused the error. (Minimal length is 60 characters)",
+      "MESSAGE_ERROR": "Minimal length is 60.",
+      "CANCEL": "Cancel",
+      "SEND": "Send",
+      "SUCCESS": "Bug report send"
+    },
     "MOVE_GROUP": {
       "TITLE": "Move group - ",
       "INFO": "Selected group will be moved (including all its sub-groups).",
@@ -901,6 +913,7 @@
     "NOTIFICATION": {
       "DEFAULT_ACTION": "Show",
       "DIALOG_CLOSE": "Close",
+      "DIALOG_BUG_REPORT": "Report a bug",
       "DEFAULT_RPC_ERROR_MESSAGE": "An operation failed."
     }
   },
